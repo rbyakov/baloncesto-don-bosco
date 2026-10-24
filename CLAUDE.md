@@ -6,8 +6,8 @@ Owner: Roman (rbyakov). His son **Makar Biakov, #7**, plays in this team. UI lan
 Repo: `git@github.com:rbyakov/baloncesto-don-bosco.git` · Pages: `https://rbyakov.github.io/baloncesto-don-bosco/`
 
 ## Status (2026-10-24)
-- Files written locally, **not pushed yet**. Next: `git init -b main && git add -A && git commit && git push -u origin main`,
-  then Settings → Pages (main / root), then Actions → "Update data" → Run workflow (first server-side run of the scraper — **untested from GitHub runners**).
+- Pushed to GitHub (public), Pages live from main / root.
+- "Update data" Action verified from GitHub runners: msstats box scores fetch fine (forced full refetch reproduced data.json byte-for-byte except `updated`).
 - A previous version lives as a Claude artifact (static, manually updated) — superseded by this repo.
 
 ## Files
