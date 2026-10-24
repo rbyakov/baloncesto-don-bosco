@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Don Bosco B · Infantil</title>
+<meta name="description" content="Estadísticas de CD Don Bosco B (Infantil Masculino 1ª Zonal, FBCV): jugadores, clasificación y calendario.">
+<meta name="theme-color" content="#0c0f14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Manrope:wght@400;600;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23ff6b1a'/%3E%3Cpath d='M3 32h58M32 3v58M12 12c10 8 10 32 0 40M52 12c-10 8-10 32 0 40' stroke='%23160a02' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<style>
+/* Layout: night-arena scoreboard. Giant jersey number hero, language switch, three tabs (player / team box score / group). Single dark theme. */
+*{box-sizing:border-box}
+:root{
+  color-scheme:dark;
+  --bg:#0c0f14; --panel:#141922; --line:#232b38; --fg:#f2eee7; --muted:#8a93a3;
+  --ball:#ff6b1a; --ball-dim:#3a1d0c; --go:#37d67a; --maybe:#f5c542; --gold:#f5c542; --silver:#c9d1dc; --bronze:#d08a52;
+  --win:#37d67a; --loss:#ff5a4e;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;
+  background-image:radial-gradient(ellipse 80% 40% at 50% 0%,#1b2230 0%,transparent 70%);background-repeat:no-repeat}
+.wrap{max-width:760px;margin:0 auto;padding-block:20px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:26px}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h2{font-family:var(--display);font-weight:800;font-size:2rem;line-height:1;text-transform:uppercase;letter-spacing:.02em;margin:0 0 14px;text-wrap:balance}
+.panel{display:flex;flex-direction:column;gap:36px}
+.msg{color:var(--muted);text-align:center;padding:40px 0}
+
+/* lang */
+.topbar{display:flex;justify-content:flex-end}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--panel)}
+.lang button{font:inherit;font-size:.75rem;font-weight:700;letter-spacing:.1em;color:var(--muted);background:none;border:0;padding:6px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--ball);outline-offset:-2px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:0 20px}
+.big7{font-family:var(--display);font-weight:900;font-size:clamp(9rem,30vw,13rem);line-height:.78;color:transparent;
+  -webkit-text-stroke:3px var(--ball);text-shadow:0 0 60px rgba(255,107,26,.35);min-width:.6em}
+.who{padding-bottom:6px;min-width:0}
+.who h1{font-family:var(--display);font-weight:900;font-size:clamp(2.4rem,8vw,3.6rem);line-height:.9;margin:6px 0 8px;text-transform:uppercase;overflow-wrap:anywhere}
+.who p{margin:0;color:var(--muted);font-size:.9rem}
+
+/* player switch + picker */
+.swap{margin-top:12px;font:inherit;font-size:.8rem;font-weight:700;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 14px;cursor:pointer}
+.swap::before{content:"⇄ ";color:var(--ball)}
+.swap:hover{border-color:var(--ball)}
+.swap:focus-visible,.close:focus-visible,.pl:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
+.picker{position:fixed;inset:0;z-index:20;background:rgba(6,8,12,.82);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;
+  padding-top:max(24px,env(safe-area-inset-top,0px));padding-bottom:max(24px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.picker-card{width:100%;max-width:640px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px}
+.picker-card .hint{margin:-6px 0 16px}
+.roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.pl{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;min-width:0}
+.pl b{font-family:var(--display);font-weight:900;font-size:2.2rem;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--ball)}
+.pl span{font-size:.85rem;font-weight:600;line-height:1.2}
+.pl:hover{border-color:var(--ball)}
+.pl[aria-current="true"]{border-color:var(--ball);background:var(--ball-dim)}
+.pl[aria-current="true"] b{color:var(--ball)}
+.close{margin-top:16px;font:inherit;font-size:.85rem;font-weight:700;color:var(--muted);background:none;border:1px solid var(--line);border-radius:99px;padding:6px 16px;cursor:pointer}
+
+/* tabs */
+.tabs{display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.tabs button{flex:1;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;
+  background:transparent;color:var(--muted);border:0;border-radius:9px;padding:10px 8px;cursor:pointer;transition:background .15s,color .15s}
+.tabs button[aria-selected="true"]{background:var(--ball);color:#160a02}
+.tabs button:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
+
+/* player line */
+.line{display:grid;grid-template-columns:repeat(3,1fr) 1.25fr 1fr;gap:10px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 14px 12px;min-width:0}
+.tile b{display:block;font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1}
+.tile span{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.tile.total{border-color:var(--ball)}
+.tile.total b{color:var(--ball);text-shadow:0 0 18px rgba(255,107,26,.4);font-size:3rem}
+.tile .att{font-size:.8rem;color:var(--muted);margin-top:2px}
+@media (max-width:560px){.line{grid-template-columns:repeat(3,1fr)}.tile.total{grid-column:span 2}}
+.rankline{margin-top:12px;color:var(--muted);font-size:.9rem}
+.rankline b{color:var(--fg)}
+
+/* per-round bars */
+.bars{display:grid;grid-template-columns:repeat(var(--n,10),1fr);gap:6px;align-items:end;height:104px}
+.bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%}
+.bar i{display:block;width:100%;border-radius:4px 4px 0 0;background:var(--ball)}
+.bar.todo i{background:var(--line)}
+.bar small{font-size:.66rem;color:var(--muted)}
+.bar em{font-style:normal;font-family:var(--display);font-weight:800;font-size:1rem}
+
+/* games */
+.games{display:flex;flex-direction:column;gap:8px}
+.game{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:inherit;text-decoration:none}
+a.game:hover{border-color:#3a4558}
+.game .res{font-family:var(--display);font-weight:800;font-size:1.5rem}
+.game .opp{min-width:0}
+.game .opp b{display:block;font-weight:700}
+.game .opp small{color:var(--muted);font-size:.8rem}
+.game .me{text-align:right;font-size:.82rem;color:var(--muted)}
+.game .me b{font-family:var(--display);font-size:1.5rem;color:var(--ball);display:block;line-height:1}
+.pill{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 7px;border-radius:99px;margin-right:6px;vertical-align:2px}
+.pill.w{background:var(--win);color:#04140a}.pill.l{background:var(--loss);color:#1a0302}
+.game.next{border-style:dashed;border-color:var(--ball)}
+
+/* tables */
+.tbl{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:11px 10px;text-align:left;white-space:nowrap}
+th{font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;border-bottom:1px solid var(--line)}
+td{border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right}
+td.pos{font-family:var(--display);font-weight:800;font-size:1.3rem;width:44px;border-left:4px solid transparent}
+tr.z1 td.pos{border-left-color:var(--go)}
+tr.z2 td.pos{border-left-color:var(--maybe)}
+tr.z3 td.pos{border-left-color:var(--line)}
+td.pts{font-family:var(--display);font-weight:800;font-size:1.35rem}
+tr.us td{background:var(--ball-dim)}
+tr.us td.team{color:var(--ball);font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:.8rem;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:-1px;background:var(--c)}
+
+/* leaderboard */
+.lb th button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.lb th[aria-sort]{color:var(--fg)}
+.lb th[aria-sort] button::after{content:" ▼";color:var(--ball)}
+.lb th button:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
+.lb th.sep,.lb td.sep{border-left:1px solid var(--line)}
+.lb td.rk{font-family:var(--display);font-weight:800;font-size:1.2rem;width:30px;color:var(--muted)}
+.lb tr.m1 td.rk{color:var(--gold)} .lb tr.m2 td.rk{color:var(--silver)} .lb tr.m3 td.rk{color:var(--bronze)}
+.lb td.jn{color:var(--muted)}
+.lb td.nm{font-weight:600}
+.lb td.tot{font-family:var(--display);font-weight:800;font-size:1.35rem}
+.lb td small{color:var(--muted);font-size:.78rem}
+.lb td.zero{color:#4c5568}
+.lb tr.me td{background:var(--ball-dim)}
+.lb tr.me td.nm,.lb tr.me td.tot{color:var(--ball)}
+.hint{color:var(--muted);font-size:.82rem;margin:10px 0 0;max-width:65ch}
+
+/* path */
+.path{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.step.goal{border-color:var(--ball);box-shadow:0 0 0 1px var(--ball),0 0 30px rgba(255,107,26,.18)}
+.step .when{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.step h3{font-family:var(--display);font-weight:800;font-size:1.35rem;line-height:1.05;margin:6px 0 8px;text-transform:uppercase}
+.step p{margin:0;font-size:.86rem;color:#c5cad3}
+.arrow{align-self:center;color:var(--ball);font-family:var(--display);font-size:1.8rem;font-weight:800}
+@media (max-width:640px){.path{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center;line-height:1}}
+
+footer{color:var(--muted);font-size:.8rem;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--fg)}
+a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){
+  .bar i{animation:grow .6s cubic-bezier(.2,.8,.2,1) both;transform-origin:bottom}
+  @keyframes grow{from{transform:scaleY(.2)}to{transform:scaleY(1)}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-l="es">ES</button><button data-l="ru">RU</button><button data-l="en">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="big7 num" aria-hidden="true" id="heroNo"></div>
+    <div class="who">
+      <div class="eyebrow">CD Don Bosco B · Infantil</div>
+      <h1 id="heroName">&nbsp;</h1>
+      <p data-t="sub"></p>
+      <button class="swap" id="swapBtn" data-t="change" hidden></button>
+    </div>
+  </header>
+
+  <div class="picker" id="picker" hidden role="dialog" aria-modal="true" aria-labelledby="pickTitle">
+    <div class="picker-card">
+      <h2 id="pickTitle" data-t="pick"></h2>
+      <p class="hint" data-t="pickHint"></p>
+      <div class="roster" id="roster"></div>
+      <button class="close" id="pickClose" data-t="close"></button>
+    </div>
+  </div>
+
+  <p class="msg" id="msg" data-t="loading"></p>
+
+  <div id="app" hidden style="display:contents">
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="t-me" aria-controls="p-me" aria-selected="true" data-t="tabMe"></button>
+    <button role="tab" id="t-team" aria-controls="p-team" aria-selected="false" data-t="tabTeam"></button>
+    <button role="tab" id="t-group" aria-controls="p-group" aria-selected="false" data-t="tabGroup"></button>
+  </nav>
+
+  <section class="panel" id="p-me" role="tabpanel" aria-labelledby="t-me">
+    <div>
+      <div class="line" id="line"></div>
+      <p class="rankline" id="rankline"></p>
+    </div>
+    <div>
+      <h2 data-t="byTour"></h2>
+      <div class="bars" id="bars"></div>
+    </div>
+    <div>
+      <h2 data-t="games"></h2>
+      <div class="games" id="games"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-team" role="tabpanel" aria-labelledby="t-team" hidden>
+    <div>
+      <h2 data-t="whoBest"></h2>
+      <div class="tbl"><table class="lb">
+        <thead><tr>
+          <th>#</th><th data-t="colNo"></th><th data-t="colPlayer"></th>
+          <th class="r sep" data-k="p2"><button data-t="col2"></button></th>
+          <th class="r" data-k="p3"><button data-t="col3"></button></th>
+          <th class="r" data-k="ft"><button data-t="colFt"></button></th>
+          <th class="r sep" data-k="pts"><button data-t="colPts"></button></th>
+          <th class="r" data-k="min"><button data-t="colMin"></button></th>
+        </tr></thead>
+        <tbody id="lb"></tbody>
+      </table></div>
+      <p class="hint" data-t="lbHint"></p>
+    </div>
+  </section>
+
+  <section class="panel" id="p-group" role="tabpanel" aria-labelledby="t-group" hidden>
+    <div>
+      <h2 data-t="standings"></h2>
+      <div class="tbl"><table>
+        <thead><tr><th>#</th><th data-t="colTeam"></th><th class="r" data-t="colG"></th><th class="r" data-t="colW"></th><th class="r" data-t="colL"></th><th class="r">+/−</th><th class="r" data-t="colPts"></th></tr></thead>
+        <tbody id="standings"></tbody>
+      </table></div>
+      <div class="legend">
+        <span style="--c:var(--go)" data-t="lg1"></span>
+        <span style="--c:var(--maybe)" data-t="lg2"></span>
+        <span style="--c:var(--line)" data-t="lg3"></span>
+      </div>
+    </div>
+    <div>
+      <h2 data-t="path"></h2>
+      <div class="path">
+        <div class="step"><div class="when" data-t="s1w"></div><h3 data-t="s1h"></h3><p data-t="s1p"></p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="step"><div class="when" data-t="s2w"></div><h3>Cto 1ª Zonal</h3><p data-t="s2p"></p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="step goal"><div class="when" data-t="s3w"></div><h3>Preferente</h3><p data-t="s3p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span id="updated"></span>
+    <a id="lnkGroup" target="_blank" rel="noopener" data-t="lnkGroup"></a>
+    <a id="lnkLast" target="_blank" rel="noopener" data-t="lnkLast"></a>
+    <a href="https://www.fbcv.es/documentacion/sistema-competicion-ir/#sec-3" target="_blank" rel="noopener" data-t="lnkRules"></a>
+  </footer>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ===== I18N ===== */
+const T={
+ ru:{loading:"Загружаю данные…",loadErr:"Не удалось загрузить данные. Обнови страницу чуть позже.",
+  sub:"1ª Zonal · 2026/27",tabMe:"Игрок",tabTeam:"Команда",tabGroup:"Группа",byTour:"Очки по турам",games:"Матчи",
+  t2:"2-очковые",t3:"3-очковые",tft:"Штрафные",ttot:"Очков всего",tmin:"Минут на поле",made:"попаданий",of:n=>`из ${n} попыток`,none:"попыток не было",
+  forG:n=>`за ${n} ${n%10===1&&n%100!==11?"игру":[2,3,4].includes(n%10)&&![12,13,14].includes(n%100)?"игры":"игр"}`,perG:n=>`≈ ${n} за игру`,
+  rank:(a,n,b)=>`В команде: <b>${a}-е место</b> из ${n} по очкам · <b>${b}-е</b> по минутам на поле`,
+  pending:"статистика скоро",noGames:"ещё не играл",dnp:"не играл",notYet:"В официальных матчах ещё не выходил — статистика появится после первой игры.",
+  T:"Т",tour:"тур",home:"дома",away:"в гостях",vs:"против",W:"В",L:"П",ptsShort:"очк.",minShort:"мин",next:"Следующий матч",
+  whoBest:"Кто лучше",colNo:"№",colPlayer:"Игрок",col2:"2-очк",col3:"3-очк",colFt:"Штраф",colPts:"Очки",colMin:"Мин",
+  lbHint:"Нажми на заголовок колонки, чтобы отсортировать. У штрафных и трёхочковых серым — сколько было попыток. Итог за все сыгранные туры.",
+  standings:"Таблица группы",colTeam:"Команда",colG:"И",colW:"В",colL:"П",lg1:"Выход в Cto 1ª Zonal",lg2:"Шанс как лучшая вторая",lg3:"Cto 2ª Zonal",
+  path:"Путь в Preferente",s1w:"окт – дек 2026",s1h:"Эта группа",s1p:"Занять 1-е место или стать одной из лучших вторых команд.",
+  s2w:"янв – май 2027",s2p:"Группы по 8 команд, дома и в гостях. Попасть в топ-4 своей группы.",s3w:"сезон 2027/28",s3p:"Топ-4 каждой группы Cto 1ª Zonal получают право играть в Preferente.",
+  updated:d=>`Данные FBCV, обновлено ${d}`,lnkGroup:"Группа на FBCV",lnkLast:"Последний матч",lnkRules:"Регламент",
+  change:"Сменить игрока",pick:"Кто ты?",pickHint:"Выбери себя — страница запомнит выбор и в следующий раз откроется сразу на тебе.",close:"Закрыть",
+  months:["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"]},
+ es:{loading:"Cargando datos…",loadErr:"No se han podido cargar los datos. Vuelve a intentarlo en un rato.",
+  sub:"1ª Zonal · 2026/27",tabMe:"Jugador",tabTeam:"Equipo",tabGroup:"Grupo",byTour:"Puntos por jornada",games:"Partidos",
+  t2:"Tiros de 2",t3:"Triples",tft:"Tiros libres",ttot:"Puntos totales",tmin:"Minutos jugados",made:"anotados",of:n=>`de ${n} intentos`,none:"sin intentos",
+  forG:n=>`en ${n} ${n===1?"partido":"partidos"}`,perG:n=>`≈ ${n} por partido`,
+  rank:(a,n,b)=>`En el equipo: <b>${a}º</b> de ${n} en puntos · <b>${b}º</b> en minutos`,
+  pending:"estadísticas en breve",noGames:"aún sin jugar",dnp:"no jugó",notYet:"Todavía no ha jugado partidos oficiales: sus datos aparecerán tras el primero.",
+  T:"J",tour:"jornada",home:"en casa",away:"fuera",vs:"contra",W:"V",L:"D",ptsShort:"pts",minShort:"min",next:"Próximo partido",
+  whoBest:"Quién lidera",colNo:"Dorsal",colPlayer:"Jugador",col2:"T2",col3:"T3",colFt:"TL",colPts:"Pts",colMin:"Min",
+  lbHint:"Pulsa el título de una columna para ordenar. En gris, los intentos de tiros libres y triples. Totales de todas las jornadas jugadas.",
+  standings:"Clasificación",colTeam:"Equipo",colG:"J",colW:"V",colL:"D",lg1:"Pasa al Cto 1ª Zonal",lg2:"Opción como mejor 2º",lg3:"Cto 2ª Zonal",
+  path:"Camino a Preferente",s1w:"oct – dic 2026",s1h:"Este grupo",s1p:"Quedar 1º o ser uno de los mejores segundos.",
+  s2w:"ene – may 2027",s2p:"Grupos de 8, ida y vuelta. Quedar entre los 4 primeros del grupo.",s3w:"temporada 2027/28",s3p:"Los 4 primeros de cada grupo del Cto 1ª Zonal tienen derecho a jugar en Preferente.",
+  updated:d=>`Datos FBCV, actualizado el ${d}`,lnkGroup:"Grupo en FBCV",lnkLast:"Último partido",lnkRules:"Normativa",
+  change:"Cambiar jugador",pick:"¿Quién eres?",pickHint:"Elige tu nombre: la página lo recordará y la próxima vez se abrirá directamente contigo.",close:"Cerrar",
+  months:["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]},
+ en:{loading:"Loading data…",loadErr:"Couldn't load the data. Please try again in a while.",
+  sub:"1ª Zonal · 2026/27",tabMe:"Player",tabTeam:"Team",tabGroup:"Group",byTour:"Points by round",games:"Games",
+  t2:"2-pointers",t3:"3-pointers",tft:"Free throws",ttot:"Total points",tmin:"Minutes played",made:"made",of:n=>`of ${n} attempts`,none:"no attempts",
+  forG:n=>`in ${n} ${n===1?"game":"games"}`,perG:n=>`≈ ${n} per game`,
+  rank:(a,n,b)=>`In the team: <b>#${a}</b> of ${n} in points · <b>#${b}</b> in minutes`,
+  pending:"stats coming soon",noGames:"no games yet",dnp:"did not play",notYet:"No official games yet: stats will appear after the first one.",
+  T:"R",tour:"round",home:"home",away:"away",vs:"vs",W:"W",L:"L",ptsShort:"pts",minShort:"min",next:"Next game",
+  whoBest:"Leaderboard",colNo:"No.",colPlayer:"Player",col2:"2PT",col3:"3PT",colFt:"FT",colPts:"Pts",colMin:"Min",
+  lbHint:"Tap a column header to sort. Grey numbers are free-throw and three-point attempts. Totals across all rounds played.",
+  standings:"Standings",colTeam:"Team",colG:"GP",colW:"W",colL:"L",lg1:"Qualifies for Cto 1ª Zonal",lg2:"Chance as a best runner-up",lg3:"Cto 2ª Zonal",
+  path:"Road to Preferente",s1w:"Oct – Dec 2026",s1h:"This group",s1p:"Finish 1st or be one of the best runners-up.",
+  s2w:"Jan – May 2027",s2p:"Groups of 8, home and away. Finish in the top 4 of the group.",s3w:"season 2027/28",s3p:"The top 4 of each Cto 1ª Zonal group earn a place in Preferente.",
+  updated:d=>`FBCV data, updated ${d}`,lnkGroup:"Group on FBCV",lnkLast:"Last game",lnkRules:"Rules",
+  change:"Switch player",pick:"Who are you?",pickHint:"Pick yourself: the page remembers it and opens straight on you next time.",close:"Close",
+  months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}
+};
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $=id=>document.getElementById(id);
+
+let L="es", D=null, US=null;
+let P={}, players=[], me=null, ours=[], played=[], finished=[], groupNow=null, roundsInGroup=10, sortK="pts";
+
+const fmtD=s=>{const [y,m,d]=String(s).slice(0,10).split("-").map(Number);return d+" "+T[L].months[m-1]};
+const hhmm=s=>String(s).slice(11,16);
+const short=n=>n===D.team.name||/don bosco b$/i.test(n)?"Don Bosco B":n;
+
+/* ===== DATA ===== */
+function prepare(){
+ US=D.team.id;
+ ours=D.matches.filter(m=>m.homeId===US||m.awayId===US);
+ finished=ours.filter(m=>m.homeScore!=null);
+ played=finished.filter(m=>m.box);
+ P={};
+ for(const p of D.players) P[p.id]={...p,g:0,min:0,pts:0,p2:0,tpm:0,tpa:0,ftm:0,fta:0,byRound:{}};
+ for(const m of played) for(const b of m.box){
+  const p=P[b.p]||(P[b.p]={id:b.p,name:"#"+(b.no??"?"),no:b.no,g:0,min:0,pts:0,p2:0,tpm:0,tpa:0,ftm:0,fta:0,byRound:{}});
+  p.g++;p.min+=b.min;p.pts+=b.pts;p.p2+=b.p2;p.tpm+=b.p3;p.tpa+=b.p3a;p.ftm+=b.ft;p.fta+=b.fta;p.byRound[m.round]=b.pts;
+ }
+ players=Object.values(P).sort((a,b)=>(a.no??999)-(b.no??999)||a.name.localeCompare(b.name));
+ const next=ours.find(m=>m.homeScore==null);
+ const gid=(next||ours[ours.length-1]||{}).groupId;
+ groupNow=D.groups.find(g=>g.id===gid&&g.standing.length)||[...D.groups].reverse().find(g=>g.standing.length)||null;
+ const nTeams=groupNow?groupNow.standing.length:6;
+ roundsInGroup=Math.max(2*(nTeams-1),...ours.filter(m=>!groupNow||m.groupId===groupNow.id).map(m=>m.round||0));
+}
+
+/* ===== RENDER ===== */
+function renderHero(){
+ $("heroNo").textContent=me.no??"–";
+ const parts=me.name.split(" ");const first=parts.shift();
+ const h=$("heroName");h.textContent=first;
+ if(parts.length){h.append(document.createElement("br"));h.append(parts.join(" "))}
+}
+function renderMe(){
+ const t=T[L];
+ $("bars").style.setProperty("--n",roundsInGroup);
+ if(!me.g){
+  $("line").innerHTML=[[t.t2],[t.t3],[t.tft],[t.ttot,"total"],[t.tmin]].map(([l,c])=>`<div class="tile ${c||""}"><b class="num">0</b><span>${l}</span><div class="att">${t.noGames}</div></div>`).join("");
+  $("rankline").innerHTML=t.notYet;
+ }else{
+  const tiles=[
+   {v:me.p2,l:t.t2,a:t.made},
+   {v:me.tpm,l:t.t3,a:me.tpa?t.of(me.tpa):t.none},
+   {v:me.ftm,l:t.tft,a:me.fta?t.of(me.fta):t.none},
+   {v:me.pts,l:t.ttot,a:t.forG(me.g),c:"total"},
+   {v:me.min,l:t.tmin,a:t.perG(Math.round(me.min/me.g))}];
+  $("line").innerHTML=tiles.map(x=>`<div class="tile ${x.c||""}"><b class="num">${x.v}</b><span>${x.l}</span><div class="att">${x.a}</div></div>`).join("");
+  const active=players.filter(p=>p.g);
+  const rk=k=>1+active.filter(p=>p[k]>me[k]).length;
+  $("rankline").innerHTML=t.rank(rk("pts"),active.length,rk("min"));
+ }
+ const vals=Object.values(me.byRound);const maxP=Math.max(10,...vals);
+ $("bars").innerHTML=Array.from({length:roundsInGroup},(_,i)=>{
+  const v=me.byRound[i+1];const h=v===undefined?4:Math.max(4,v/maxP*72);
+  return `<div class="bar ${v===undefined?"todo":""}">${v!==undefined?`<em class="num">${v}</em>`:""}<i style="height:${h}px"></i><small>${t.T}${i+1}</small></div>`;
+ }).join("");
+ renderGames(t);
+}
+function renderGames(t){
+ const rows=[...finished].reverse().map(m=>{
+  const home=m.homeId===US, us=home?m.homeScore:m.awayScore, them=home?m.awayScore:m.homeScore, won=us>them;
+  if(!m.box) return `<a class="game" href="https://www.fbcv.es/competiciones/partido?id=${m.id}" target="_blank" rel="noopener"><div class="res num"><span class="pill ${won?"w":"l"}">${won?t.W:t.L}</span>${us}–${them}</div>
+   <div class="opp"><b>${t.vs} ${esc(home?m.away:m.home)}</b><small>${t.tour} ${m.round} · ${fmtD(m.date)} · ${home?t.home:t.away}</small></div>
+   <div class="me">${t.pending}</div></a>`;
+  const b=m.box.find(r=>r.p===me.id);
+  return `<a class="game" href="https://www.fbcv.es/competiciones/partido?id=${m.id}" target="_blank" rel="noopener"><div class="res num"><span class="pill ${won?"w":"l"}">${won?t.W:t.L}</span>${us}–${them}</div>
+   <div class="opp"><b>${t.vs} ${esc(home?m.away:m.home)}</b><small>${t.tour} ${m.round} · ${fmtD(m.date)} · ${home?t.home:t.away}</small></div>
+   <div class="me"><b class="num">${b?b.pts:"–"}</b>${b?`${t.ptsShort} · ${b.min} ${t.minShort}`:t.dnp}</div></a>`;
+ });
+ const next=ours.find(m=>m.homeScore==null);
+ if(next){const home=next.homeId===US;
+  rows.unshift(`<div class="game next"><div class="res" style="color:var(--ball)">${hhmm(next.date)}</div>
+   <div class="opp"><b>${t.next}: ${t.vs} ${esc(home?next.away:next.home)}</b><small>${t.tour} ${next.round} · ${fmtD(next.date)} · ${home?t.home:t.away} · ${esc(next.venue)}</small></div><div></div></div>`);}
+ $("games").innerHTML=rows.join("");
+}
+
+const KEYS={p2:p=>p.p2,p3:p=>p.tpm,ft:p=>p.ftm,pts:p=>p.pts,min:p=>p.min};
+const TIE={p2:"pts",p3:"pts",ft:"fta",pts:"min",min:"pts"};
+const cell=(v,extra,cls="")=>`<td class="r ${cls} ${v===0?"zero":""}">${v}${extra?` <small>/${extra}</small>`:""}</td>`;
+function renderLB(){
+ const k=sortK,f=KEYS[k],tb=TIE[k];
+ const rows=[...players].sort((a,b)=>f(b)-f(a)||(k==="ft"?a[tb]-b[tb]:b[tb]-a[tb]));
+ let rank=0,prev=null;
+ $("lb").innerHTML=rows.map((p,i)=>{
+  const v=f(p); if(v!==prev){rank=i+1;prev=v}
+  return `<tr class="${p.id===me.id?"me ":""}${rank<=3&&v>0?"m"+rank:""}">
+   <td class="rk num">${rank}</td><td class="jn num">${p.no??"–"}</td><td class="nm">${esc(p.name)}</td>
+   ${cell(p.p2,0,"sep")}${cell(p.tpm,p.tpa)}${cell(p.ftm,p.fta)}
+   <td class="r tot sep">${p.pts}</td>${cell(p.min,0)}</tr>`;
+ }).join("");
+ document.querySelectorAll(".lb th[data-k]").forEach(th=>th.dataset.k===k?th.setAttribute("aria-sort","descending"):th.removeAttribute("aria-sort"));
+}
+document.querySelectorAll(".lb th[data-k] button").forEach(b=>b.onclick=()=>{sortK=b.parentElement.dataset.k;renderLB()});
+
+function renderStand(){
+ if(!groupNow){$("standings").innerHTML="";return}
+ $("standings").innerHTML=groupNow.standing.map((s,i)=>{
+  const z=i===0?"z1":i===1?"z2":"z3",d=s.pf-s.pa;
+  return `<tr class="${z}${s.teamId===US?" us":""}"><td class="pos num">${s.pos}</td><td class="team">${esc(short(s.team))}</td><td class="r">${s.g}</td><td class="r">${s.w}</td><td class="r">${s.l}</td><td class="r">${d>0?"+":""}${d}</td><td class="r pts">${s.pts}</td></tr>`;
+ }).join("");
+}
+function renderFooter(){
+ const t=T[L];
+ const stamp=D.liveAt||D.updated;
+ if(stamp){const u=new Date(stamp);$("updated").textContent=t.updated(`${u.getDate()} ${t.months[u.getMonth()]}, ${String(u.getHours()).padStart(2,"0")}:${String(u.getMinutes()).padStart(2,"0")}`)}
+ if(groupNow)$("lnkGroup").href=`https://www.fbcv.es/competiciones/competicion?id=${groupNow.id}`;
+ const last=finished[finished.length-1];
+ if(last)$("lnkLast").href=`https://www.fbcv.es/competiciones/partido?id=${last.id}`;else $("lnkLast").hidden=true;
+}
+function renderAll(){if(!D)return;renderHero();renderMe();renderLB();renderStand();renderFooter()}
+
+/* ===== PICKER ===== */
+const picker=$("picker");
+function renderRoster(){
+ $("roster").innerHTML=players.map(p=>`<button class="pl" data-id="${esc(p.id)}" aria-current="${p.id===me.id}"><b class="num">${p.no??"–"}</b><span>${esc(p.name)}</span></button>`).join("");
+ document.querySelectorAll(".pl").forEach(b=>b.onclick=()=>{selectPlayer(b.dataset.id,true);closePicker()});
+}
+function selectPlayer(id,save){
+ me=P[id]||me;
+ if(save)store.set("player",me.id);
+ renderHero();renderMe();renderLB();
+}
+function openPicker(){renderRoster();picker.hidden=false;(picker.querySelector('.pl[aria-current="true"]')||picker.querySelector(".pl"))?.focus()}
+function closePicker(){picker.hidden=true;$("swapBtn").focus()}
+$("swapBtn").onclick=openPicker;
+$("pickClose").onclick=closePicker;
+picker.addEventListener("click",e=>{if(e.target===picker)closePicker()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!picker.hidden)closePicker()});
+
+/* ===== LANGUAGE ===== */
+function setLang(l,save){
+ L=T[l]?l:"es";
+ document.documentElement.lang=L;
+ document.querySelectorAll("[data-t]").forEach(el=>{const v=T[L][el.dataset.t];if(typeof v==="string")el.textContent=v});
+ document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===L));
+ if(save)store.set("lang",L);
+ renderAll();
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l,true));
+
+/* ===== TABS ===== */
+const TABS=["me","team","group"];
+function show(id){
+ for(const t of TABS){const on=t===id;$("t-"+t).setAttribute("aria-selected",on);$("p-"+t).hidden=!on}
+ store.set("tab",id);
+}
+for(const t of TABS) $("t-"+t).onclick=()=>show(t);
+
+/* ===== BOOT ===== */
+(function(){
+ let sl=store.get("lang");
+ if(!T[sl]){
+  const nav=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""]).map(x=>String(x).slice(0,2).toLowerCase());
+  sl=nav.map(x=>x==="ca"||x==="va"?"es":x).find(x=>T[x])||"en";
+ }
+ setLang(sl);
+})();
+
+/* ===== LIVE LAYER: scores, calendar and standings straight from FBCV (CORS-open part of the API) =====
+   Player box scores are not available cross-origin; they come from data.json (GitHub Action). */
+const ESB="https://esb.optimalwayconsulting.com/fbcv/1/btz38ZsZlAdaODiH2fGsnJC9mZgSNPeR/";
+const title=s=>String(s||"").toLowerCase().replace(/(^|[\s\-'’])(\p{L})/gu,(m,a,b)=>a+b.toUpperCase()).replace(/\b(Cd|Cb|Cba|Nb|Nbp|Upb|Cde|Eb|Bc|Cbc|Cf|Scd|Imv|Ii|Iii)\b/g,w=>w.toUpperCase());
+async function esb(path){
+ const r=await fetch(ESB+path);if(!r.ok)throw new Error(r.status);
+ let t=(await r.text()).trim(),j;
+ try{j=JSON.parse(t)}catch(e){j=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(t),c=>c.charCodeAt(0))))}
+ if(j.result&&j.result!=="OK")throw new Error(j.message||j.result);
+ return j.messageData;
+}
+async function liveRefresh(){
+ const id=D.team.id, now=new Date(), months=[now.getMonth()+1,(now.getMonth()+1)%12+1];
+ const [card,...lists]=await Promise.all([esb(`FCBQWeb/getTeamCard/${id}`),...months.map(m=>esb(`Match/getByTeamAndMonth/${id}/${m}`).catch(()=>[]))]);
+ for(const g of card?.team?.groups||[]){
+  const st=(g.standing||[]).map(s=>({pos:+s.position,teamId:+s.idTeam,team:title(s.teamName),g:+s.matchPlayed,w:+s.matchWin,l:+s.matchLost,pf:+s.matchScoreFavour,pa:+s.matchScoreAgainst,pts:+s.standingScore})).sort((a,b)=>a.pos-b.pos);
+  const old=D.groups.find(x=>x.id===+g.idGroup);
+  if(old){if(st.length)old.standing=st}else D.groups.push({id:+g.idGroup,name:g.nameGroup,phase:g.competitionName,category:g.categoryRegisteredName,standing:st});
+ }
+ for(const x of lists.flatMap(l=>Array.isArray(l)?l:Object.values(l||{}))){
+  const has=x.localScore!==null&&x.localScore!==""&&x.localScore!==undefined;
+  const m={id:+x.idMatch,round:+x.numMatchDay||null,date:x.matchDay,home:title(x.nameLocalTeam),away:title(x.nameVisitorTeam),homeId:+x.idLocalTeam,awayId:+x.idVisitorTeam,
+   homeScore:has?+x.localScore:null,awayScore:has?+x.visitorScore:null,venue:title(x.nameField||""),groupId:+x.idGroup||null};
+  const old=D.matches.find(y=>y.id===m.id);
+  if(old)Object.assign(old,m);else D.matches.push({...m,box:null});
+ }
+ D.matches.sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+ D.liveAt=new Date().toISOString();
+}
+
+fetch("data.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(data=>{
+ D=data;prepare();
+ const hash=(location.hash||"").slice(1);
+ const saved=store.get("player");
+ const byHash=/^p\d+$/.test(hash)?players.find(p=>"p"+p.no===hash):null;
+ const def=players.find(p=>D.defaultPlayer&&p.name.toLowerCase().startsWith(D.defaultPlayer.toLowerCase()))||players[0];
+ me=byHash||P[saved]||def;
+ if(byHash)store.set("player",me.id);
+ $("msg").hidden=true;$("app").hidden=false;$("swapBtn").hidden=false;
+ renderAll();
+ let start=TABS.includes(hash)?hash:store.get("tab");
+ show(TABS.includes(start)?start:"me");
+ if(!byHash&&!P[saved])openPicker();
+ // then refresh scores/standings live; keep the selected player
+ liveRefresh().then(()=>{const keep=me.id;prepare();me=P[keep]||me;renderAll();if(!picker.hidden)renderRoster()}).catch(e=>console.warn("live refresh failed",e));
+}).catch(e=>{console.error(e);$("msg").textContent=T[L].loadErr});
+</script>
+</body>
+</html>

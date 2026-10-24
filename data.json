@@ -1,0 +1,611 @@
+{
+ "team": {
+  "id": 12981,
+  "name": "CD Don Bosco B",
+  "club": "CD Don Bosco Valencia"
+ },
+ "season": 2026,
+ "defaultPlayer": "Makar",
+ "players": [
+  {
+   "id": "3stsv7",
+   "name": "Martín O.",
+   "no": 2,
+   "registered": true
+  },
+  {
+   "id": "zi8knw",
+   "name": "Joel L.",
+   "no": 4,
+   "registered": true
+  },
+  {
+   "id": "1767fla",
+   "name": "Carlos M.",
+   "no": 5,
+   "registered": true
+  },
+  {
+   "id": "5c1zlt",
+   "name": "Makar B.",
+   "no": 7,
+   "registered": true
+  },
+  {
+   "id": "mcemes",
+   "name": "Bruno P.",
+   "no": 8,
+   "registered": true
+  },
+  {
+   "id": "n395zr",
+   "name": "Biel A.",
+   "no": 10,
+   "registered": true
+  },
+  {
+   "id": "1jlbkes",
+   "name": "Jose Luis M.",
+   "no": 18,
+   "registered": true
+  },
+  {
+   "id": "18yxr8a",
+   "name": "Oliver F.",
+   "no": 19,
+   "registered": true
+  },
+  {
+   "id": "hvfh0m",
+   "name": "Lucas A.",
+   "no": 23,
+   "registered": true
+  },
+  {
+   "id": "73sahz",
+   "name": "Valentino Luca N.",
+   "no": 24,
+   "registered": true
+  },
+  {
+   "id": "fm3gwc",
+   "name": "Dylan Thiago C.",
+   "no": 25,
+   "registered": true
+  },
+  {
+   "id": "174d18j",
+   "name": "Lorenzo Ramino N.",
+   "no": 35,
+   "registered": true
+  },
+  {
+   "id": "kz2kbm",
+   "name": "Luis Ángel F.",
+   "no": 36,
+   "registered": true
+  },
+  {
+   "id": "i5az7w",
+   "name": "Izan Ú.",
+   "no": 77,
+   "registered": true
+  },
+  {
+   "id": "1fwsuxw",
+   "name": "Yehor",
+   "no": null,
+   "registered": false,
+   "pending": true
+  }
+ ],
+ "groups": [
+  {
+   "id": 2826,
+   "name": "Gr C",
+   "phase": "Fase Regular",
+   "category": "Infantil Masculino IR Nivel 1ª Zonal",
+   "standing": [
+    {
+     "pos": 1,
+     "teamId": 10520,
+     "team": "Jesuitas M Blanco",
+     "g": 2,
+     "w": 1,
+     "l": 1,
+     "pf": 118,
+     "pa": 118,
+     "pts": 3
+    },
+    {
+     "pos": 2,
+     "teamId": 13583,
+     "team": "Arte Láctico CB Chiva",
+     "g": 2,
+     "w": 1,
+     "l": 1,
+     "pf": 77,
+     "pa": 107,
+     "pts": 3
+    },
+    {
+     "pos": 3,
+     "teamId": 10689,
+     "team": "Picanya Bàsquet Futurpiso 13",
+     "g": 1,
+     "w": 1,
+     "l": 0,
+     "pf": 54,
+     "pa": 14,
+     "pts": 2
+    },
+    {
+     "pos": 4,
+     "teamId": 13015,
+     "team": "Ferriemocion Claret Azul",
+     "g": 1,
+     "w": 1,
+     "l": 0,
+     "pf": 80,
+     "pa": 57,
+     "pts": 2
+    },
+    {
+     "pos": 5,
+     "teamId": 12981,
+     "team": "CD Don Bosco B",
+     "g": 2,
+     "w": 0,
+     "l": 2,
+     "pf": 91,
+     "pa": 124,
+     "pts": 2
+    },
+    {
+     "pos": 6,
+     "teamId": 11581,
+     "team": "CB Aldaia B",
+     "g": 0,
+     "w": 0,
+     "l": 0,
+     "pf": 0,
+     "pa": 0,
+     "pts": 0
+    }
+   ]
+  }
+ ],
+ "matches": [
+  {
+   "id": 72620,
+   "round": 1,
+   "date": "2026-10-17 16:00:00",
+   "home": "CD Don Bosco B",
+   "away": "Jesuitas M Blanco",
+   "homeId": 12981,
+   "awayId": 10520,
+   "homeScore": 38,
+   "awayScore": 61,
+   "venue": "Pab Salesianos",
+   "groupId": 2826,
+   "box": [
+    {
+     "p": "1767fla",
+     "no": 0,
+     "min": 17,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "3stsv7",
+     "no": 2,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "zi8knw",
+     "no": 4,
+     "min": 13,
+     "pts": 5,
+     "p2": 1,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 4,
+     "pf": 3
+    },
+    {
+     "p": "5c1zlt",
+     "no": 7,
+     "min": 18,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "mcemes",
+     "no": 8,
+     "min": 15,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "n395zr",
+     "no": 10,
+     "min": 23,
+     "pts": 6,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "1jlbkes",
+     "no": 18,
+     "min": 20,
+     "pts": 1,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 6,
+     "pf": 2
+    },
+    {
+     "p": "18yxr8a",
+     "no": 19,
+     "min": 12,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 2
+    },
+    {
+     "p": "73sahz",
+     "no": 24,
+     "min": 10,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "fm3gwc",
+     "no": 25,
+     "min": 20,
+     "pts": 8,
+     "p2": 4,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 4
+    },
+    {
+     "p": "174d18j",
+     "no": 35,
+     "min": 12,
+     "pts": 2,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 4,
+     "pf": 0
+    },
+    {
+     "p": "i5az7w",
+     "no": 77,
+     "min": 20,
+     "pts": 6,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 4,
+     "pf": 3
+    }
+   ]
+  },
+  {
+   "id": 72623,
+   "round": 2,
+   "date": "2026-10-24 09:15:00",
+   "home": "Arte Láctico CB Chiva",
+   "away": "CD Don Bosco B",
+   "homeId": 13583,
+   "awayId": 12981,
+   "homeScore": 63,
+   "awayScore": 53,
+   "venue": "Centro Dep Muni",
+   "groupId": 2826,
+   "box": [
+    {
+     "p": "3stsv7",
+     "no": 2,
+     "min": 16,
+     "pts": 6,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "zi8knw",
+     "no": 4,
+     "min": 14,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1767fla",
+     "no": 5,
+     "min": 19,
+     "pts": 5,
+     "p2": 1,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 4
+    },
+    {
+     "p": "5c1zlt",
+     "no": 7,
+     "min": 14,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 3
+    },
+    {
+     "p": "mcemes",
+     "no": 8,
+     "min": 16,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "n395zr",
+     "no": 10,
+     "min": 21,
+     "pts": 11,
+     "p2": 5,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 6,
+     "pf": 5
+    },
+    {
+     "p": "1jlbkes",
+     "no": 18,
+     "min": 16,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "hvfh0m",
+     "no": 23,
+     "min": 21,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "73sahz",
+     "no": 24,
+     "min": 14,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "fm3gwc",
+     "no": 25,
+     "min": 15,
+     "pts": 4,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 3,
+     "pf": 2
+    },
+    {
+     "p": "174d18j",
+     "no": 35,
+     "min": 14,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "kz2kbm",
+     "no": 36,
+     "min": 20,
+     "pts": 11,
+     "p2": 5,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 0
+    }
+   ]
+  },
+  {
+   "id": 72626,
+   "round": 3,
+   "date": "2026-10-31 16:00:00",
+   "home": "CD Don Bosco B",
+   "away": "Ferriemocion Claret Azul",
+   "homeId": 12981,
+   "awayId": 13015,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72629,
+   "round": 4,
+   "date": "2026-11-07 16:00:00",
+   "home": "CD Don Bosco B",
+   "away": "CB Aldaia B",
+   "homeId": 12981,
+   "awayId": 11581,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72632,
+   "round": 5,
+   "date": "2026-11-14 11:00:00",
+   "home": "Picanya Bàsquet Futurpiso 13",
+   "away": "CD Don Bosco B",
+   "homeId": 10689,
+   "awayId": 12981,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni Picanya",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72635,
+   "round": 6,
+   "date": "2026-11-19 18:00:00",
+   "home": "Jesuitas M Blanco",
+   "away": "CD Don Bosco B",
+   "homeId": 10520,
+   "awayId": 12981,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Col San Jose",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72638,
+   "round": 7,
+   "date": "2026-11-26 19:00:00",
+   "home": "CD Don Bosco B",
+   "away": "Arte Láctico CB Chiva",
+   "homeId": 12981,
+   "awayId": 13583,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72641,
+   "round": 8,
+   "date": "2026-12-06 09:00:00",
+   "home": "Ferriemocion Claret Azul",
+   "away": "CD Don Bosco B",
+   "homeId": 13015,
+   "awayId": 12981,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni Benimaclet",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72644,
+   "round": 9,
+   "date": "2026-12-13 13:00:00",
+   "home": "CB Aldaia B",
+   "away": "CD Don Bosco B",
+   "homeId": 11581,
+   "awayId": 12981,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni Aldaia",
+   "groupId": 2826,
+   "box": null
+  },
+  {
+   "id": 72647,
+   "round": 10,
+   "date": "2026-12-19 16:00:00",
+   "home": "CD Don Bosco B",
+   "away": "Picanya Bàsquet Futurpiso 13",
+   "homeId": 12981,
+   "awayId": 10689,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2826,
+   "box": null
+  }
+ ],
+ "updated": "2026-10-24T14:28:42.816Z"
+}
