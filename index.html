@@ -347,9 +347,8 @@ function prepare(){
 /* ===== RENDER ===== */
 function renderHero(){
  $("heroNo").textContent=me.no??"–";
- const parts=me.name.split(" ");const first=parts.shift();
- const h=$("heroName");h.textContent=first;
- if(parts.length){h.append(document.createElement("br"));h.append(parts.join(" "))}
+ // one line; long names wrap naturally, but the last word (e.g. initial "B.") never wraps alone
+ $("heroName").textContent=me.name.replace(/ (\S+)$/," $1");
 }
 function renderMe(){
  const t=T[L];
