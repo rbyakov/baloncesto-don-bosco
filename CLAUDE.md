@@ -11,7 +11,7 @@ Repo: `git@github.com:rbyakov/baloncesto-don-bosco.git` · Pages: `https://rbyak
 - A previous version lives as a Claude artifact (static, manually updated) — superseded by this repo.
 
 ## Files
-- `index.html` — whole site (vanilla JS, no build). Dark "arena scoreboard" design, fonts Big Shoulders Display + Manrope.
+- `index.html` — whole site (vanilla JS, no build). Dark "arena scoreboard" design, fonts Big Shoulders Display + Inter; below the hero blocks use fill only, no outlines.
   Tabs: Player / Team (sortable leaderboard: 2PT, 3PT, FT, total, minutes) / Group (standings + path to Preferente).
   Player picker on first visit, choice saved in `localStorage.player`; language in `localStorage.lang` (only saved on explicit click; default = browser language, ca/va→es, else en). Deep links: `#p7` (player by shirt number), `#team`, `#group`.
 - `data.json` — built by the script; committed. Initial version hand-verified against live API (checksum-matched).
