@@ -108,6 +108,17 @@
    "standing": [
     {
      "pos": 1,
+     "teamId": 10689,
+     "team": "Picanya Bàsquet Futurpiso 13",
+     "g": 2,
+     "w": 2,
+     "l": 0,
+     "pf": 132,
+     "pa": 80,
+     "pts": 4
+    },
+    {
+     "pos": 2,
      "teamId": 10520,
      "team": "Jesuitas M Blanco",
      "g": 2,
@@ -118,7 +129,7 @@
      "pts": 3
     },
     {
-     "pos": 2,
+     "pos": 3,
      "teamId": 13583,
      "team": "Arte Láctico CB Chiva",
      "g": 2,
@@ -127,17 +138,6 @@
      "pf": 77,
      "pa": 107,
      "pts": 3
-    },
-    {
-     "pos": 3,
-     "teamId": 10689,
-     "team": "Picanya Bàsquet Futurpiso 13",
-     "g": 1,
-     "w": 1,
-     "l": 0,
-     "pf": 54,
-     "pa": 14,
-     "pts": 2
     },
     {
      "pos": 4,
@@ -165,12 +165,12 @@
      "pos": 6,
      "teamId": 11581,
      "team": "CB Aldaia B",
-     "g": 0,
+     "g": 1,
      "w": 0,
-     "l": 0,
-     "pf": 0,
-     "pa": 0,
-     "pts": 0
+     "l": 1,
+     "pf": 66,
+     "pa": 78,
+     "pts": 1
     }
    ]
   }
@@ -607,5 +607,5 @@
    "box": null
   }
  ],
- "updated": "2026-10-24T14:28:42.816Z"
+ "updated": "2026-10-25T15:02:31.285Z"
 }
