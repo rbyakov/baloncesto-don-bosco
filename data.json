@@ -20,12 +20,6 @@
    "registered": true
   },
   {
-   "id": "1767fla",
-   "name": "Carlos M.",
-   "no": 5,
-   "registered": true
-  },
-  {
    "id": "5c1zlt",
    "name": "Makar B.",
    "no": 7,
@@ -35,6 +29,12 @@
    "id": "mcemes",
    "name": "Bruno P.",
    "no": 8,
+   "registered": true
+  },
+  {
+   "id": "1767fla",
+   "name": "Carlos M.",
+   "no": 9,
    "registered": true
   },
   {
@@ -119,6 +119,17 @@
     },
     {
      "pos": 2,
+     "teamId": 13015,
+     "team": "Ferriemocion Claret Azul",
+     "g": 2,
+     "w": 2,
+     "l": 0,
+     "pf": 141,
+     "pa": 88,
+     "pts": 4
+    },
+    {
+     "pos": 3,
      "teamId": 10520,
      "team": "Jesuitas M Blanco",
      "g": 3,
@@ -129,7 +140,7 @@
      "pts": 4
     },
     {
-     "pos": 3,
+     "pos": 4,
      "teamId": 13583,
      "team": "Arte Láctico CB Chiva",
      "g": 2,
@@ -140,26 +151,15 @@
      "pts": 3
     },
     {
-     "pos": 4,
-     "teamId": 13015,
-     "team": "Ferriemocion Claret Azul",
-     "g": 1,
-     "w": 1,
-     "l": 0,
-     "pf": 80,
-     "pa": 57,
-     "pts": 2
-    },
-    {
      "pos": 5,
      "teamId": 12981,
      "team": "CD Don Bosco B",
-     "g": 2,
+     "g": 3,
      "w": 0,
-     "l": 2,
-     "pf": 91,
-     "pa": 124,
-     "pts": 2
+     "l": 3,
+     "pf": 122,
+     "pa": 185,
+     "pts": 3
     },
     {
      "pos": 6,
@@ -502,11 +502,156 @@
    "away": "Ferriemocion Claret Azul",
    "homeId": 12981,
    "awayId": 13015,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 31,
+   "awayScore": 61,
    "venue": "Pab Salesianos",
    "groupId": 2826,
-   "box": null
+   "box": [
+    {
+     "p": "3stsv7",
+     "no": 2,
+     "min": 15,
+     "pts": 2,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "zi8knw",
+     "no": 4,
+     "min": 15,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "5c1zlt",
+     "no": 7,
+     "min": 15,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "mcemes",
+     "no": 8,
+     "min": 15,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 3
+    },
+    {
+     "p": "1767fla",
+     "no": 9,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 4
+    },
+    {
+     "p": "n395zr",
+     "no": 10,
+     "min": 20,
+     "pts": 9,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "18yxr8a",
+     "no": 19,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "73sahz",
+     "no": 24,
+     "min": 15,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 2,
+     "pf": 3
+    },
+    {
+     "p": "fm3gwc",
+     "no": 25,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "174d18j",
+     "no": 35,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "kz2kbm",
+     "no": 36,
+     "min": 20,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "i5az7w",
+     "no": 77,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    }
+   ]
   },
   {
    "id": 72629,
@@ -607,5 +752,5 @@
    "box": null
   }
  ],
- "updated": "2026-10-31T12:12:54.705Z"
+ "updated": "2026-10-31T17:21:05.051Z"
 }
