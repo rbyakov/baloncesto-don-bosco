@@ -110,23 +110,23 @@
      "pos": 1,
      "teamId": 10689,
      "team": "Picanya Bàsquet Futurpiso 13",
-     "g": 2,
-     "w": 2,
+     "g": 3,
+     "w": 3,
      "l": 0,
-     "pf": 132,
-     "pa": 80,
-     "pts": 4
+     "pf": 195,
+     "pa": 126,
+     "pts": 6
     },
     {
      "pos": 2,
      "teamId": 10520,
      "team": "Jesuitas M Blanco",
-     "g": 2,
+     "g": 3,
      "w": 1,
-     "l": 1,
-     "pf": 118,
-     "pa": 118,
-     "pts": 3
+     "l": 2,
+     "pf": 164,
+     "pa": 181,
+     "pts": 4
     },
     {
      "pos": 3,
@@ -607,5 +607,5 @@
    "box": null
   }
  ],
- "updated": "2026-10-25T15:02:31.285Z"
+ "updated": "2026-10-31T12:12:54.705Z"
 }
