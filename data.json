@@ -712,14 +712,14 @@
   {
    "id": 72641,
    "round": 8,
-   "date": "2026-12-06 09:00:00",
+   "date": "2026-12-05 09:30:00",
    "home": "Ferriemocion Claret Azul",
    "away": "CD Don Bosco B",
    "homeId": 13015,
    "awayId": 12981,
    "homeScore": null,
    "awayScore": null,
-   "venue": "Pab Muni Benimaclet",
+   "venue": "Pab Muni Malvarrosa",
    "groupId": 2826,
    "box": null
   },
@@ -752,5 +752,5 @@
    "box": null
   }
  ],
- "updated": "2026-10-31T17:21:05.051Z"
+ "updated": "2026-11-06T15:01:51.040Z"
 }
