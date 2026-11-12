@@ -1,0 +1,888 @@
+{
+ "team": {
+  "id": 12980,
+  "name": "CD Don Bosco A",
+  "club": "CD Don Bosco Valencia"
+ },
+ "season": 2026,
+ "defaultPlayer": null,
+ "players": [
+  {
+   "id": "1spu8np",
+   "name": "Adrián C.",
+   "no": 1,
+   "registered": true
+  },
+  {
+   "id": "v9hgqc",
+   "name": "Jorge V.",
+   "no": 6,
+   "registered": true
+  },
+  {
+   "id": "1lhcahq",
+   "name": "Ibrahim M.",
+   "no": 7,
+   "registered": true
+  },
+  {
+   "id": "6uba6t",
+   "name": "Marti P.",
+   "no": 10,
+   "registered": true
+  },
+  {
+   "id": "1tn8vw6",
+   "name": "Lucas G.",
+   "no": 11,
+   "registered": true
+  },
+  {
+   "id": "1nczzpq",
+   "name": "Marcos G.",
+   "no": 14,
+   "registered": true
+  },
+  {
+   "id": "1tcznu4",
+   "name": "Mateo G.",
+   "no": 15,
+   "registered": true
+  },
+  {
+   "id": "1m5gujm",
+   "name": "P. A.",
+   "no": 21,
+   "registered": true
+  },
+  {
+   "id": "1h7jpvw",
+   "name": "Javier L.",
+   "no": 22,
+   "registered": true
+  },
+  {
+   "id": "1el893f",
+   "name": "Manuel Z.",
+   "no": 24,
+   "registered": true
+  },
+  {
+   "id": "q1tn57",
+   "name": "Diego N.",
+   "no": 33,
+   "registered": true
+  },
+  {
+   "id": "xneoz6",
+   "name": "Cesar S.",
+   "no": 34,
+   "registered": true
+  },
+  {
+   "id": "wcfqza",
+   "name": "Noah R.",
+   "no": 35,
+   "registered": true
+  }
+ ],
+ "groups": [
+  {
+   "id": 2819,
+   "name": "Gr C",
+   "phase": "Fase Regular",
+   "category": "Infantil Masculino IR Nivel Preferente",
+   "standing": [
+    {
+     "pos": 1,
+     "teamId": 10128,
+     "team": "Piedras Maestrazgo Jovens L´eliana",
+     "g": 4,
+     "w": 3,
+     "l": 1,
+     "pf": 263,
+     "pa": 176,
+     "pts": 7
+    },
+    {
+     "pos": 2,
+     "teamId": 10789,
+     "team": "CB Moncada \"a\"",
+     "g": 4,
+     "w": 3,
+     "l": 1,
+     "pf": 246,
+     "pa": 226,
+     "pts": 7
+    },
+    {
+     "pos": 3,
+     "teamId": 11911,
+     "team": "EB Lliria Infantil Negre",
+     "g": 3,
+     "w": 3,
+     "l": 0,
+     "pf": 202,
+     "pa": 109,
+     "pts": 6
+    },
+    {
+     "pos": 4,
+     "teamId": 12980,
+     "team": "CD Don Bosco A",
+     "g": 4,
+     "w": 1,
+     "l": 3,
+     "pf": 227,
+     "pa": 259,
+     "pts": 5
+    },
+    {
+     "pos": 5,
+     "teamId": 10645,
+     "team": "N.b. Paterna A 2013",
+     "g": 4,
+     "w": 1,
+     "l": 3,
+     "pf": 154,
+     "pa": 255,
+     "pts": 5
+    },
+    {
+     "pos": 6,
+     "teamId": 10448,
+     "team": "CD Escuelas Pías A",
+     "g": 3,
+     "w": 0,
+     "l": 3,
+     "pf": 92,
+     "pa": 159,
+     "pts": 3
+    }
+   ]
+  }
+ ],
+ "matches": [
+  {
+   "id": 73441,
+   "round": 1,
+   "date": "2026-10-17 16:00:00",
+   "home": "CD Don Bosco A",
+   "away": "EB Lliria Infantil Negre",
+   "homeId": 12980,
+   "awayId": 11911,
+   "homeScore": 42,
+   "awayScore": 80,
+   "venue": "Pab Salesianos",
+   "groupId": 2819,
+   "box": [
+    {
+     "p": "1spu8np",
+     "no": 1,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "v9hgqc",
+     "no": 6,
+     "min": 19,
+     "pts": 4,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 4,
+     "pf": 0
+    },
+    {
+     "p": "1lhcahq",
+     "no": 7,
+     "min": 15,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 3
+    },
+    {
+     "p": "6uba6t",
+     "no": 10,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1tn8vw6",
+     "no": 11,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1nczzpq",
+     "no": 14,
+     "min": 17,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 1,
+     "pf": 2
+    },
+    {
+     "p": "1m5gujm",
+     "no": 21,
+     "min": 16,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "1h7jpvw",
+     "no": 22,
+     "min": 14,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 1,
+     "pf": 2
+    },
+    {
+     "p": "1el893f",
+     "no": 24,
+     "min": 19,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 5,
+     "pf": 2
+    },
+    {
+     "p": "q1tn57",
+     "no": 33,
+     "min": 20,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "xneoz6",
+     "no": 34,
+     "min": 15,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "wcfqza",
+     "no": 35,
+     "min": 20,
+     "pts": 8,
+     "p2": 4,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    }
+   ]
+  },
+  {
+   "id": 73445,
+   "round": 2,
+   "date": "2026-10-25 10:30:00",
+   "home": "Piedras Maestrazgo Jovens L´eliana",
+   "away": "CD Don Bosco A",
+   "homeId": 10128,
+   "awayId": 12980,
+   "homeScore": 65,
+   "awayScore": 52,
+   "venue": "Pab Muni Eliana",
+   "groupId": 2819,
+   "box": [
+    {
+     "p": "1spu8np",
+     "no": 1,
+     "min": 15,
+     "pts": 4,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 7,
+     "pf": 0
+    },
+    {
+     "p": "v9hgqc",
+     "no": 6,
+     "min": 16,
+     "pts": 2,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "1lhcahq",
+     "no": 7,
+     "min": 15,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "6uba6t",
+     "no": 10,
+     "min": 15,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1tn8vw6",
+     "no": 11,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1nczzpq",
+     "no": 14,
+     "min": 20,
+     "pts": 1,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 3
+    },
+    {
+     "p": "1tcznu4",
+     "no": 15,
+     "min": 10,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1m5gujm",
+     "no": 21,
+     "min": 20,
+     "pts": 18,
+     "p2": 6,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 3,
+     "fta": 4,
+     "pf": 4
+    },
+    {
+     "p": "1h7jpvw",
+     "no": 22,
+     "min": 14,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 4
+    },
+    {
+     "p": "1el893f",
+     "no": 24,
+     "min": 20,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 4
+    },
+    {
+     "p": "q1tn57",
+     "no": 33,
+     "min": 20,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "xneoz6",
+     "no": 34,
+     "min": 15,
+     "pts": 7,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 1,
+     "pf": 0
+    }
+   ]
+  },
+  {
+   "id": 73446,
+   "round": 3,
+   "date": "2026-11-01 13:00:00",
+   "home": "N.b. Paterna A 2013",
+   "away": "CD Don Bosco A",
+   "homeId": 10645,
+   "awayId": 12980,
+   "homeScore": 51,
+   "awayScore": 80,
+   "venue": "Pab Muni Paterna",
+   "groupId": 2819,
+   "box": [
+    {
+     "p": "1spu8np",
+     "no": 1,
+     "min": 15,
+     "pts": 7,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "v9hgqc",
+     "no": 6,
+     "min": 17,
+     "pts": 5,
+     "p2": 1,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1lhcahq",
+     "no": 7,
+     "min": 16,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "6uba6t",
+     "no": 10,
+     "min": 17,
+     "pts": 9,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 3,
+     "pf": 2
+    },
+    {
+     "p": "1tn8vw6",
+     "no": 11,
+     "min": 15,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "1nczzpq",
+     "no": 14,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1tcznu4",
+     "no": 15,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1m5gujm",
+     "no": 21,
+     "min": 19,
+     "pts": 14,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 10,
+     "fta": 14,
+     "pf": 4
+    },
+    {
+     "p": "1h7jpvw",
+     "no": 22,
+     "min": 14,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 5
+    },
+    {
+     "p": "1el893f",
+     "no": 24,
+     "min": 18,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 4
+    },
+    {
+     "p": "q1tn57",
+     "no": 33,
+     "min": 15,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "xneoz6",
+     "no": 34,
+     "min": 19,
+     "pts": 22,
+     "p2": 10,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 6,
+     "pf": 1
+    }
+   ]
+  },
+  {
+   "id": 73451,
+   "round": 4,
+   "date": "2026-11-07 18:00:00",
+   "home": "CD Don Bosco A",
+   "away": "CB Moncada \"a\"",
+   "homeId": 12980,
+   "awayId": 10789,
+   "homeScore": 53,
+   "awayScore": 63,
+   "venue": "Pab Salesianos",
+   "groupId": 2819,
+   "box": [
+    {
+     "p": "1spu8np",
+     "no": 1,
+     "min": 12,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 2
+    },
+    {
+     "p": "v9hgqc",
+     "no": 6,
+     "min": 15,
+     "pts": 12,
+     "p2": 6,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1lhcahq",
+     "no": 7,
+     "min": 19,
+     "pts": 5,
+     "p2": 1,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 2,
+     "pf": 4
+    },
+    {
+     "p": "6uba6t",
+     "no": 10,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1tn8vw6",
+     "no": 11,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1nczzpq",
+     "no": 14,
+     "min": 20,
+     "pts": 6,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 5,
+     "pf": 3
+    },
+    {
+     "p": "1tcznu4",
+     "no": 15,
+     "min": 10,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1m5gujm",
+     "no": 21,
+     "min": 23,
+     "pts": 15,
+     "p2": 6,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 5,
+     "pf": 0
+    },
+    {
+     "p": "1h7jpvw",
+     "no": 22,
+     "min": 15,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1el893f",
+     "no": 24,
+     "min": 16,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "q1tn57",
+     "no": 33,
+     "min": 17,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "xneoz6",
+     "no": 34,
+     "min": 18,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 3
+    }
+   ]
+  },
+  {
+   "id": 73453,
+   "round": 5,
+   "date": "2026-11-14 09:30:00",
+   "home": "CD Escuelas Pías A",
+   "away": "CD Don Bosco A",
+   "homeId": 10448,
+   "awayId": 12980,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Col Escuelas Pias",
+   "groupId": 2819,
+   "box": null
+  },
+  {
+   "id": 73456,
+   "round": 6,
+   "date": "2026-11-21 09:00:00",
+   "home": "EB Lliria Infantil Negre",
+   "away": "CD Don Bosco A",
+   "homeId": 11911,
+   "awayId": 12980,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni Viejo",
+   "groupId": 2819,
+   "box": null
+  },
+  {
+   "id": 73460,
+   "round": 7,
+   "date": "2026-11-28 16:00:00",
+   "home": "CD Don Bosco A",
+   "away": "Piedras Maestrazgo Jovens L´eliana",
+   "homeId": 12980,
+   "awayId": 10128,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2819,
+   "box": null
+  },
+  {
+   "id": 73461,
+   "round": 8,
+   "date": "2026-12-05 18:00:00",
+   "home": "CD Don Bosco A",
+   "away": "N.b. Paterna A 2013",
+   "homeId": 12980,
+   "awayId": 10645,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2819,
+   "box": null
+  },
+  {
+   "id": 73466,
+   "round": 9,
+   "date": "2026-12-12 11:00:00",
+   "home": "CB Moncada \"a\"",
+   "away": "CD Don Bosco A",
+   "homeId": 10789,
+   "awayId": 12980,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pabellón Polideportivo Sara Moreno Y Vicente Lli",
+   "groupId": 2819,
+   "box": null
+  },
+  {
+   "id": 73468,
+   "round": 10,
+   "date": "2026-12-19 16:00:00",
+   "home": "CD Don Bosco A",
+   "away": "CD Escuelas Pías A",
+   "homeId": 12980,
+   "awayId": 10448,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2819,
+   "box": null
+  }
+ ],
+ "updated": "2026-11-12T20:03:03.487Z"
+}

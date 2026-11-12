@@ -1,0 +1,822 @@
+{
+ "team": {
+  "id": 11425,
+  "name": "CD Don Bosco C",
+  "club": "CD Don Bosco Valencia"
+ },
+ "season": 2026,
+ "defaultPlayer": null,
+ "players": [
+  {
+   "id": "1jyanul",
+   "name": "Marcel G.",
+   "no": 3,
+   "registered": true
+  },
+  {
+   "id": "16r62zb",
+   "name": "Carlos A.",
+   "no": 4,
+   "registered": true
+  },
+  {
+   "id": "1ivy5ux",
+   "name": "Aitor Isaac T.",
+   "no": 7,
+   "registered": true
+  },
+  {
+   "id": "1h3yevf",
+   "name": "Ferran P.",
+   "no": 9,
+   "registered": true
+  },
+  {
+   "id": "gm16nm",
+   "name": "Luis L.",
+   "no": 11,
+   "registered": true
+  },
+  {
+   "id": "1togqjr",
+   "name": "Adrian R.",
+   "no": 12,
+   "registered": true
+  },
+  {
+   "id": "wvg3y8",
+   "name": "Adrian I.",
+   "no": 13,
+   "registered": true
+  },
+  {
+   "id": "1g3w4q3",
+   "name": "Sergio M.",
+   "no": 14,
+   "registered": true
+  },
+  {
+   "id": "anazmb",
+   "name": "Isaac K.",
+   "no": 23,
+   "registered": true
+  },
+  {
+   "id": "1c0u47g",
+   "name": "Manuel P.",
+   "no": 29,
+   "registered": true
+  },
+  {
+   "id": "1o8p4u0",
+   "name": "Roberto D.",
+   "no": 32,
+   "registered": true
+  },
+  {
+   "id": "1hmfj7h",
+   "name": "Paulo M.",
+   "no": 77,
+   "registered": true
+  },
+  {
+   "id": "6yxw09",
+   "name": "Joan R.",
+   "no": 81,
+   "registered": true
+  },
+  {
+   "id": "1lfgwx6",
+   "name": "Adrian C.",
+   "no": null,
+   "registered": true
+  }
+ ],
+ "groups": [
+  {
+   "id": 2841,
+   "name": "Gr J",
+   "phase": "Fase Regular",
+   "category": "Infantil Masculino IR Nivel 2ª Zonal",
+   "standing": [
+    {
+     "pos": 1,
+     "teamId": 10617,
+     "team": "CB Grao",
+     "g": 4,
+     "w": 4,
+     "l": 0,
+     "pf": 236,
+     "pa": 103,
+     "pts": 8
+    },
+    {
+     "pos": 2,
+     "teamId": 11425,
+     "team": "CD Don Bosco C",
+     "g": 4,
+     "w": 3,
+     "l": 1,
+     "pf": 248,
+     "pa": 154,
+     "pts": 7
+    },
+    {
+     "pos": 3,
+     "teamId": 10295,
+     "team": "CDE Calasanz Valencia Naranja",
+     "g": 4,
+     "w": 3,
+     "l": 1,
+     "pf": 225,
+     "pa": 192,
+     "pts": 7
+    },
+    {
+     "pos": 4,
+     "teamId": 11546,
+     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
+     "g": 3,
+     "w": 1,
+     "l": 2,
+     "pf": 127,
+     "pa": 173,
+     "pts": 4
+    },
+    {
+     "pos": 5,
+     "teamId": 11205,
+     "team": "C. B. Tabernes Blanques B",
+     "g": 4,
+     "w": 0,
+     "l": 4,
+     "pf": 114,
+     "pa": 247,
+     "pts": 4
+    },
+    {
+     "pos": 6,
+     "teamId": 10554,
+     "team": "Mislata BC Blanco",
+     "g": 3,
+     "w": 0,
+     "l": 3,
+     "pf": 107,
+     "pa": 188,
+     "pts": 3
+    }
+   ]
+  }
+ ],
+ "matches": [
+  {
+   "id": 73040,
+   "round": 1,
+   "date": "2026-10-17 09:00:00",
+   "home": "CDE Calasanz Valencia Naranja",
+   "away": "CD Don Bosco C",
+   "homeId": 10295,
+   "awayId": 11425,
+   "homeScore": 54,
+   "awayScore": 43,
+   "venue": "Col San Jose De Calasanz",
+   "groupId": 2841,
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 29,
+     "pts": 9,
+     "p2": 3,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 19,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "1h3yevf",
+     "no": 9,
+     "min": 21,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "gm16nm",
+     "no": 11,
+     "min": 28,
+     "pts": 10,
+     "p2": 5,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "1togqjr",
+     "no": 12,
+     "min": 11,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 14,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 3,
+     "pf": 0
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 21,
+     "pts": 8,
+     "p2": 4,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "1o8p4u0",
+     "no": 32,
+     "min": 11,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "1hmfj7h",
+     "no": 77,
+     "min": 11,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "6yxw09",
+     "no": 81,
+     "min": 20,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 1
+    }
+   ]
+  },
+  {
+   "id": 73045,
+   "round": 2,
+   "date": "2026-10-25 13:00:00",
+   "home": "CD Don Bosco C",
+   "away": "C. B. Tabernes Blanques B",
+   "homeId": 11425,
+   "awayId": 11205,
+   "homeScore": 67,
+   "awayScore": 27,
+   "venue": "Pab Salesianos",
+   "groupId": 2841,
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 20,
+     "pts": 9,
+     "p2": 3,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 20,
+     "pts": 7,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "1h3yevf",
+     "no": 9,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "gm16nm",
+     "no": 11,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1togqjr",
+     "no": 12,
+     "min": 20,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 20,
+     "pts": 25,
+     "p2": 12,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 5,
+     "pf": 2
+    },
+    {
+     "p": "1c0u47g",
+     "no": 29,
+     "min": 20,
+     "pts": 8,
+     "p2": 4,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "6yxw09",
+     "no": 81,
+     "min": 20,
+     "pts": 4,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 3,
+     "pf": 0
+    }
+   ]
+  },
+  {
+   "id": 73047,
+   "round": 3,
+   "date": "2026-10-31 10:00:00",
+   "home": "Burger L'Horta-CD Berenguer Dalmau Groc",
+   "away": "CD Don Bosco C",
+   "homeId": 11546,
+   "awayId": 11425,
+   "homeScore": 45,
+   "awayScore": 78,
+   "venue": "Pab Muni Cubierto Catarroja",
+   "groupId": 2841,
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 15,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 11,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 15,
+     "pts": 5,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "gm16nm",
+     "no": 11,
+     "min": 25,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 1,
+     "pf": 1
+    },
+    {
+     "p": "1togqjr",
+     "no": 12,
+     "min": 11,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 15,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 3,
+     "pf": 1
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 29,
+     "pts": 31,
+     "p2": 14,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 8,
+     "pf": 2
+    },
+    {
+     "p": "1c0u47g",
+     "no": 29,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1o8p4u0",
+     "no": 32,
+     "min": 24,
+     "pts": 8,
+     "p2": 4,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "1hmfj7h",
+     "no": 77,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 4
+    },
+    {
+     "p": "6yxw09",
+     "no": 81,
+     "min": 20,
+     "pts": 12,
+     "p2": 6,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 1,
+     "pf": 1
+    }
+   ]
+  },
+  {
+   "id": 73050,
+   "round": 4,
+   "date": "2026-11-08 13:00:00",
+   "home": "CD Don Bosco C",
+   "away": "Mislata BC Blanco",
+   "homeId": 11425,
+   "awayId": 10554,
+   "homeScore": 60,
+   "awayScore": 28,
+   "venue": "Pab Salesianos",
+   "groupId": 2841,
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 20,
+     "pts": 8,
+     "p2": 1,
+     "p3": 2,
+     "p3a": 2,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 20,
+     "pts": 3,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 8,
+     "pf": 0
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 20,
+     "pts": 9,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 3,
+     "pf": 2
+    },
+    {
+     "p": "1h3yevf",
+     "no": 9,
+     "min": 19,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 5
+    },
+    {
+     "p": "1togqjr",
+     "no": 12,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 20,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1g3w4q3",
+     "no": 14,
+     "min": 20,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 21,
+     "pts": 22,
+     "p2": 11,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 6,
+     "pf": 2
+    },
+    {
+     "p": "1o8p4u0",
+     "no": 32,
+     "min": 20,
+     "pts": 12,
+     "p2": 6,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 1
+    },
+    {
+     "p": "6yxw09",
+     "no": 81,
+     "min": 20,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    }
+   ]
+  },
+  {
+   "id": 73054,
+   "round": 5,
+   "date": "2026-11-14 11:30:00",
+   "home": "CB Grao",
+   "away": "CD Don Bosco C",
+   "homeId": 10617,
+   "awayId": 11425,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni Malvarrosa",
+   "groupId": 2841,
+   "box": null
+  },
+  {
+   "id": 73055,
+   "round": 6,
+   "date": "2026-11-22 09:00:00",
+   "home": "CD Don Bosco C",
+   "away": "CDE Calasanz Valencia Naranja",
+   "homeId": 11425,
+   "awayId": 10295,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2841,
+   "box": null
+  },
+  {
+   "id": 73060,
+   "round": 7,
+   "date": "2026-11-28 10:45:00",
+   "home": "C. B. Tabernes Blanques B",
+   "away": "CD Don Bosco C",
+   "homeId": 11205,
+   "awayId": 11425,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni Tabernes Blanques",
+   "groupId": 2841,
+   "box": null
+  },
+  {
+   "id": 73062,
+   "round": 8,
+   "date": "2026-12-06 13:00:00",
+   "home": "CD Don Bosco C",
+   "away": "Burger L'Horta-CD Berenguer Dalmau Groc",
+   "homeId": 11425,
+   "awayId": 11546,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2841,
+   "box": null
+  },
+  {
+   "id": 73065,
+   "round": 9,
+   "date": "2026-12-12 12:45:00",
+   "home": "Mislata BC Blanco",
+   "away": "CD Don Bosco C",
+   "homeId": 10554,
+   "awayId": 11425,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Muni El Quint",
+   "groupId": 2841,
+   "box": null
+  },
+  {
+   "id": 73069,
+   "round": 10,
+   "date": "2026-12-20 13:00:00",
+   "home": "CD Don Bosco C",
+   "away": "CB Grao",
+   "homeId": 11425,
+   "awayId": 10617,
+   "homeScore": null,
+   "awayScore": null,
+   "venue": "Pab Salesianos",
+   "groupId": 2841,
+   "box": null
+  }
+ ],
+ "updated": "2026-11-12T20:03:10.699Z"
+}
