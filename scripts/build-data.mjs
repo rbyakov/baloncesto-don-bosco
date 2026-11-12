@@ -1,7 +1,8 @@
 // Builds data.json for the site from the FBCV results platform (OW Basket).
 // Runs in GitHub Actions (Node 20+). No dependencies.
 //
-//   node scripts/build-data.mjs
+//   node scripts/build-data.mjs          # our team (config.teamId) -> data.json
+//   node scripts/build-data.mjs 12980    # another club team from config.otherTeams -> data-12980.json
 //
 // Only what the page needs is written: names (shortened per config), shirt
 // numbers and box scores. Personal fields that the API returns (birth date,
@@ -21,8 +22,13 @@ const HEADERS = {
 const SEASON_MONTHS = [9, 10, 11, 12, 1, 2, 3, 4, 5, 6];
 
 const cfg = JSON.parse(await readFile(new URL("../config.json", import.meta.url), "utf8"));
+const teamId = Number(process.argv[2]) || cfg.teamId;
+const isHome = teamId === cfg.teamId;
+const other = (cfg.otherTeams || []).find((t) => t.id === teamId);
+if (!isHome && !other) throw new Error(`team ${teamId} is not in config.otherTeams`);
+const OUT = new URL(isHome ? "../data.json" : `../data-${teamId}.json`, import.meta.url);
 let prev = null;
-try { prev = JSON.parse(await readFile(new URL("../data.json", import.meta.url), "utf8")); } catch {}
+try { prev = JSON.parse(await readFile(OUT, "utf8")); } catch {}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -82,7 +88,6 @@ function displayNames(people, style) {
 }
 
 // ---------- fetch ----------
-const teamId = cfg.teamId;
 console.log(`Team ${teamId}, season ${cfg.season}`);
 
 const card = await esb(`FCBQWeb/getTeamCard/${teamId}`);
@@ -95,10 +100,15 @@ const rosterRaw = (card.players || []).filter((p) => String(p.licenseTypeId) ===
 // Match-sheet names may carry a second surname the roster omits (or vice versa): map them to the roster name
 const rosterFulls = rosterRaw.map((p) => norm(`${p.first} ${p.last}`));
 const plain = (s) => norm(s).normalize("NFD").replace(/\p{M}/gu, "");
+// Names FBCV hides as initials are written differently: roster "P. A." vs match sheet "P.A.E."
+const isInitials = (s) => /^([A-Z]\.\s*)+$/i.test(plain(s));
+const letters = (s) => plain(s).replace(/[^A-Z]/g, "");
 function canon(name) {
   const n = norm(name), pn = plain(name);
   return rosterFulls.find((r) => plain(r) === pn)
     || rosterFulls.find((r) => pn.startsWith(plain(r) + " ") || plain(r).startsWith(pn + " "))
+    || (isInitials(n) && rosterFulls.find((r) => isInitials(r) && letters(r).length >= 2
+      && (letters(n).startsWith(letters(r)) || letters(r).startsWith(letters(n)))))
     || n;
 }
 
@@ -196,16 +206,16 @@ for (const m of matches) for (const b of m.box || []) if (!ids.has(b.p)) {
   ids.add(b.p);
 }
 // Squad members the coach lists who are not registered with FBCV yet
-for (const n of cfg.extraPlayers || []) {
+for (const n of isHome ? cfg.extraPlayers || [] : []) {
   const taken = players.some((p) => norm(p.name).startsWith(norm(n)));
   if (!taken) players.push({ id: hash("extra:" + n), name: n, no: null, registered: false, pending: true });
 }
 players.sort((a, b) => (a.no ?? 999) - (b.no ?? 999) || a.name.localeCompare(b.name));
 
 const out = {
-  team: { id: teamId, name: cfg.teamName, club: cfg.clubName },
+  team: { id: teamId, name: isHome ? cfg.teamName : other.name, club: cfg.clubName },
   season: cfg.season,
-  defaultPlayer: cfg.defaultPlayer || null,
+  defaultPlayer: isHome ? cfg.defaultPlayer || null : null,
   players,
   groups,
   matches,
@@ -215,5 +225,5 @@ const before = prev ? JSON.stringify({ ...prev, updated: undefined }) : "";
 const after = JSON.stringify({ ...out, updated: undefined });
 if (before === after) { console.log("No changes."); process.exit(0); }
 out.updated = new Date().toISOString();
-await writeFile(new URL("../data.json", import.meta.url), JSON.stringify(out, null, 1) + "\n");
-console.log(`data.json written: ${players.length} players, ${matches.filter((m) => m.box).length} box scores`);
+await writeFile(OUT, JSON.stringify(out, null, 1) + "\n");
+console.log(`${OUT.pathname.split("/").pop()} written: ${players.length} players, ${matches.filter((m) => m.box).length} box scores`);

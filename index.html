@@ -172,6 +172,14 @@ tr.us td.team{color:var(--ball);font-weight:700}
 .grp{display:inline-block;min-width:1.5em;text-align:center;font-size:.7rem;font-weight:800;border-radius:6px;padding:0 4px;background:var(--panel-hi);color:var(--fg);margin-right:4px}
 .more{margin-top:10px;font:inherit;font-size:.82rem;font-weight:700;color:var(--fg);background:var(--panel);border:0;border-radius:99px;padding:7px 16px;cursor:pointer}
 
+/* team step in picker */
+.roster .tmc{grid-column:1/-1;flex-direction:row;align-items:center;gap:14px}
+.roster .tmc b{font-size:2.6rem}
+.roster .tmc span{display:flex;flex-direction:column;font-size:1rem}
+.roster .tmc small{color:var(--muted);font-size:.8rem;font-weight:500}
+.roster .tmc.busy{opacity:.55}
+.roster .back{grid-column:1/-1;justify-self:start;font:inherit;font-size:.82rem;font-weight:700;color:var(--fg);background:var(--panel);border:0;border-radius:99px;padding:6px 14px;cursor:pointer}
+
 footer{color:var(--muted);font-size:.8rem;display:flex;flex-wrap:wrap;gap:6px 16px}
 footer a{color:var(--fg)}
 a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
@@ -192,9 +200,9 @@ a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
   <header class="hero">
     <div class="big7 num" aria-hidden="true" id="heroNo"></div>
     <div class="who">
-      <div class="eyebrow">CD Don Bosco B · Infantil</div>
+      <div class="eyebrow" id="heroTeam">CD Don Bosco B · Infantil</div>
       <h1 id="heroName">&nbsp;</h1>
-      <p data-t="sub"></p>
+      <p id="heroSub"></p>
       <button class="swap" id="swapBtn" data-t="change" hidden></button>
     </div>
   </header>
@@ -277,7 +285,7 @@ a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
         <span style="--c:var(--line)" data-t="lg3"></span>
       </div>
     </div>
-    <div>
+    <div id="pathBox">
       <h2 data-t="path"></h2>
       <div class="path">
         <div class="step"><div class="when" data-t="s1w"></div><h3 data-t="s1h"></h3><p data-t="s1p"></p></div>
@@ -315,7 +323,7 @@ const T={
   path:"Путь в Preferente",s1w:"окт – дек 2026",s1h:"Эта группа",s1p:"Занять 1-е место или стать одной из лучших вторых команд.",
   s2w:"янв – май 2027",s2p:"Группы по 8 команд, дома и в гостях. Попасть в топ-4 своей группы.",s3w:"сезон 2027/28",s3p:"Топ-4 каждой группы Cto 1ª Zonal получают право играть в Preferente.",
   updated:d=>`Данные FBCV, обновлено ${d}`,lnkGroup:"Группа на FBCV",lnkLast:"Последний матч",lnkRules:"Регламент",
-  change:"Сменить игрока",pick:"Кто ты?",pickHint:"Выбери себя — страница запомнит выбор и в следующий раз откроется сразу на тебе.",close:"Закрыть",
+  change:"Сменить игрока",teamsBack:"Команды",pickTeam:"Выбери команду",pick:"Кто ты?",pickHint:"Выбери себя — страница запомнит выбор и в следующий раз откроется сразу на тебе.",close:"Закрыть",
   months:["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"]},
  es:{loading:"Cargando datos…",loadErr:"No se han podido cargar los datos. Vuelve a intentarlo en un rato.",
   sub:"1ª Zonal · 2026/27",tabMe:"Jugador",tabTeam:"Equipo",tabGroup:"Grupo",byTour:"Puntos por jornada",games:"Partidos",
@@ -330,7 +338,7 @@ const T={
   path:"Camino a Preferente",s1w:"oct – dic 2026",s1h:"Este grupo",s1p:"Quedar 1º o ser uno de los mejores segundos.",
   s2w:"ene – may 2027",s2p:"Grupos de 8, ida y vuelta. Quedar entre los 4 primeros del grupo.",s3w:"temporada 2027/28",s3p:"Los 4 primeros de cada grupo del Cto 1ª Zonal tienen derecho a jugar en Preferente.",
   updated:d=>`Datos FBCV, actualizado el ${d}`,lnkGroup:"Grupo en FBCV",lnkLast:"Último partido",lnkRules:"Normativa",
-  change:"Cambiar jugador",pick:"¿Quién eres?",pickHint:"Elige tu nombre: la página lo recordará y la próxima vez se abrirá directamente contigo.",close:"Cerrar",
+  change:"Cambiar jugador",teamsBack:"Equipos",pickTeam:"Elige tu equipo",pick:"¿Quién eres?",pickHint:"Elige tu nombre: la página lo recordará y la próxima vez se abrirá directamente contigo.",close:"Cerrar",
   months:["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]},
  en:{loading:"Loading data…",loadErr:"Couldn't load the data. Please try again in a while.",
   sub:"1ª Zonal · 2026/27",tabMe:"Player",tabTeam:"Team",tabGroup:"Group",byTour:"Points by round",games:"Games",
@@ -345,7 +353,7 @@ const T={
   path:"Road to Preferente",s1w:"Oct – Dec 2026",s1h:"This group",s1p:"Finish 1st or be one of the best runners-up.",
   s2w:"Jan – May 2027",s2p:"Groups of 8, home and away. Finish in the top 4 of the group.",s3w:"season 2027/28",s3p:"The top 4 of each Cto 1ª Zonal group earn a place in Preferente.",
   updated:d=>`FBCV data, updated ${d}`,lnkGroup:"Group on FBCV",lnkLast:"Last game",lnkRules:"Rules",
-  change:"Switch player",pick:"Who are you?",pickHint:"Pick yourself: the page remembers it and opens straight on you next time.",close:"Close",
+  change:"Switch player",teamsBack:"Teams",pickTeam:"Pick your team",pick:"Who are you?",pickHint:"Pick yourself: the page remembers it and opens straight on you next time.",close:"Close",
   months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}
 };
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
@@ -357,7 +365,7 @@ let P={}, players=[], me=null, ours=[], played=[], finished=[], groupNow=null, r
 
 const fmtD=s=>{const [y,m,d]=String(s).slice(0,10).split("-").map(Number);return d+" "+T[L].months[m-1]};
 const hhmm=s=>String(s).slice(11,16);
-const short=n=>n===D.team.name||/don bosco b$/i.test(n)?"Don Bosco B":n;
+const short=n=>/^cd don bosco /i.test(n)?n.replace(/^CD /i,""):n;
 
 /* ===== DATA ===== */
 function prepare(){
@@ -381,6 +389,7 @@ function prepare(){
 
 /* ===== RENDER ===== */
 function renderHero(){
+ const c=CLUB.find(x=>x.k===teamK)||CLUB[1]; $("heroTeam").textContent=`CD Don Bosco ${c.k} · Infantil`; $("heroSub").textContent=`${c.lvl} · 2026/27`;
  $("heroNo").textContent=me.no??"–";
  // one line; long names wrap naturally, but the last word (e.g. initial "B.") never wraps alone
  $("heroName").textContent=me.name.replace(/ (\S+)$/," $1");
@@ -447,6 +456,7 @@ function renderLB(){
 document.querySelectorAll(".lb th[data-k] button").forEach(b=>b.onclick=()=>{sortK=b.parentElement.dataset.k;renderLB()});
 
 function renderStand(){
+ $("pathBox").hidden=D.team.id!==HOME;
  if(!groupNow){$("standings").innerHTML="";return}
  $("standings").innerHTML=groupNow.standing.map((s,i)=>{
   const z=i===0?"z1":i===1?"z2":"z3",d=s.pf-s.pa;
@@ -466,16 +476,17 @@ let LG=null, scope="team", otAll=false;
 function myRanks(){
  const active=players.filter(p=>p.g);
  const team=me&&me.g?{rk:1+active.filter(p=>p.pts>me.pts).length,n:active.length}:null;
- const o=LG&&me&&me.g?LG.ours.find(x=>x.no===me.no):null;
+ const o=LG&&me&&me.g&&D.team.id===HOME?LG.ours.find(x=>x.no===me.no):null;
  return {team, group:o?{rk:o.grk,n:LG.groupTotal}:null, league:o?{rk:o.lrk,n:LG.leagueTotal}:null};
 }
 function renderRanks(){
  if(!me)return;
  const t=T[L], r=myRanks();
  const chip=(k,lab)=>`<button class="rk3 ${scope===k?"on":""}" data-s="${k}"><span>${lab}</span><b class="num">${r[k]?r[k].rk:"–"}<small>${r[k]?t.rkOf(r[k].n):""}</small></b></button>`;
- $("ranks").innerHTML=chip("team",t.scTeam)+(LG?chip("group",t.scGroup)+chip("league",t.scLeague):"");
+ const lg=LG&&D.team.id===HOME; if(!lg&&scope!=="team"){scope="team";$("scopeTeam").hidden=false;$("scopeOther").hidden=true;document.querySelectorAll(".scope button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s==="team"))}
+ $("ranks").innerHTML=chip("team",t.scTeam)+(lg?chip("group",t.scGroup)+chip("league",t.scLeague):"");
  document.querySelectorAll(".rk3").forEach(b=>b.onclick=()=>setScope(b.dataset.s));
- document.querySelector(".scope").hidden=!LG;
+ document.querySelector(".scope").hidden=!lg;
 }
 function setScope(s){scope=s;otAll=false;document.querySelectorAll(".scope button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===s));$("scopeTeam").hidden=s!=="team";$("scopeOther").hidden=s==="team";renderRanks();renderOther()}
 document.querySelectorAll(".scope button").forEach(b=>b.onclick=()=>setScope(b.dataset.s));
@@ -504,16 +515,50 @@ function renderAll(){if(!D)return;renderHero();renderMe();renderLB();renderStand
 
 /* ===== PICKER ===== */
 const picker=$("picker");
+/* club teams: A (Preferente) / B (1ª Zonal) / C (2ª Zonal) */
+const CLUB=[{k:"A",id:12980,lvl:"Preferente"},{k:"B",id:12981,lvl:"1ª Zonal"},{k:"C",id:11425,lvl:"2ª Zonal"}];
+const HOME=12981, DATA={};
+let teamK="B", pickStage="teams", pickK=null;
+async function loadTeam(k){
+ if(DATA[k])return DATA[k];
+ const c=CLUB.find(x=>x.k===k); let d=null;
+ try{const r=await fetch(c.id===HOME?"data.json":`data-${c.id}.json`,{cache:"no-cache"});if(r.ok)d=await r.json()}catch(e){}
+ if(!d)throw new Error("no data for team "+k);
+ return DATA[k]=d;
+}
+function useTeam(k){teamK=k;D=DATA[k];prepare()}
+const rosterOf=d=>[...d.players].sort((a,b)=>(a.no??999)-(b.no??999)||a.name.localeCompare(b.name));
 function renderRoster(){
- $("roster").innerHTML=players.map(p=>`<button class="pl" data-id="${esc(p.id)}" aria-current="${p.id===me.id}"><b class="num">${p.no??"–"}</b><span>${esc(p.name)}</span></button>`).join("");
- document.querySelectorAll(".pl").forEach(b=>b.onclick=()=>{selectPlayer(b.dataset.id,true);closePicker()});
+ const t=T[L];
+ $("pickTitle").textContent=pickStage==="teams"?t.pickTeam:t.pick;
+ if(pickStage==="teams"){
+  $("roster").innerHTML=CLUB.map(c=>`<button class="pl tmc" data-k="${c.k}" aria-current="${c.k===teamK}"><b>${c.k}</b><span>Don Bosco ${c.k}<small>${c.lvl}</small></span></button>`).join("");
+  document.querySelectorAll(".tmc").forEach(b=>b.onclick=async()=>{
+   b.classList.add("busy");
+   try{await loadTeam(b.dataset.k);pickK=b.dataset.k;pickStage="players";renderRoster();picker.querySelector(".pl")?.focus()}
+   catch(e){console.error(e);b.classList.remove("busy");b.querySelector("small").textContent=t.loadErr}
+  });
+  return;
+ }
+ const list=rosterOf(DATA[pickK]);
+ $("roster").innerHTML=`<button class="back" id="pkBack">← ${t.teamsBack}</button>`+list.map(p=>`<button class="pl" data-id="${esc(p.id)}" aria-current="${pickK===teamK&&me&&p.id===me.id}"><b class="num">${p.no??"–"}</b><span>${esc(p.name)}</span></button>`).join("");
+ $("pkBack").onclick=()=>{pickStage="teams";renderRoster()};
+ document.querySelectorAll(".pl[data-id]").forEach(b=>b.onclick=()=>{selectFrom(pickK,b.dataset.id);closePicker()});
+}
+function selectFrom(k,id){
+ const sw=k!==teamK;
+ if(sw)useTeam(k);
+ me=P[id]||players[0];
+ store.set("team",k);store.set("player",me.id);
+ renderAll();
+ if(sw&&!D.liveAt)goLive();
 }
 function selectPlayer(id,save){
  me=P[id]||me;
  if(save)store.set("player",me.id);
  renderHero();renderMe();renderLB();renderRanks();renderOther();
 }
-function openPicker(){renderRoster();picker.hidden=false;(picker.querySelector('.pl[aria-current="true"]')||picker.querySelector(".pl"))?.focus()}
+function openPicker(){pickStage="teams";renderRoster();picker.hidden=false;(picker.querySelector('.pl[aria-current="true"]')||picker.querySelector(".pl"))?.focus()}
 function closePicker(){picker.hidden=true;$("swapBtn").focus()}
 $("swapBtn").onclick=openPicker;
 $("pickClose").onclick=closePicker;
@@ -560,7 +605,7 @@ async function esb(path){
  if(j.result&&j.result!=="OK")throw new Error(j.message||j.result);
  return j.messageData;
 }
-async function liveRefresh(){
+async function liveRefresh(D){
  const id=D.team.id, now=new Date(), months=[now.getMonth()+1,(now.getMonth()+1)%12+1];
  const [card,...lists]=await Promise.all([esb(`FCBQWeb/getTeamCard/${id}`),...months.map(m=>esb(`Match/getByTeamAndMonth/${id}/${m}`).catch(()=>[]))]);
  for(const g of card?.team?.groups||[]){
@@ -579,8 +624,13 @@ async function liveRefresh(){
  D.liveAt=new Date().toISOString();
 }
 
-fetch("data.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(data=>{
- D=data;prepare();
+function goLive(){
+ const d=D;
+ liveRefresh(d).then(()=>{if(D!==d)return;const keep=me.id;prepare();me=P[keep]||me;renderAll();if(!picker.hidden)renderRoster()}).catch(e=>console.warn("live refresh failed",e));
+}
+{const sk=store.get("team");teamK=CLUB.some(c=>c.k===sk)?sk:"B";}
+loadTeam(teamK).catch(()=>{teamK="B";return loadTeam("B")}).then(()=>{
+ useTeam(teamK);
  const hash=(location.hash||"").slice(1);
  const saved=store.get("player");
  const byHash=/^p\d+$/.test(hash)?players.find(p=>"p"+p.no===hash):null;
@@ -593,7 +643,7 @@ fetch("data.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status
  show(TABS.includes(start)?start:"me");
  if(!byHash&&!P[saved])openPicker();
  // then refresh scores/standings live; keep the selected player
- liveRefresh().then(()=>{const keep=me.id;prepare();me=P[keep]||me;renderAll();if(!picker.hidden)renderRoster()}).catch(e=>console.warn("live refresh failed",e));
+ goLive();
 }).catch(e=>{console.error(e);$("msg").textContent=T[L].loadErr});
 </script>
 </body>

@@ -28,14 +28,20 @@ jobs:
           node-version: 20
       - name: Build data.json from FBCV
         run: node scripts/build-data.mjs
+      - name: Build data for the other club teams (A, C)
+        run: |
+          for id in $(node -e 'console.log((require("./config.json").otherTeams||[]).map(t=>t.id).join(" "))'); do
+            node scripts/build-data.mjs "$id" || echo "::warning::team $id failed"
+          done
+        continue-on-error: true
       - name: Build league.json (group + league rankings, at most once a day)
         run: node scripts/build-league.mjs
         continue-on-error: true
       - name: Commit if changed
         run: |
-          if git diff --quiet -- data.json league.json; then echo "No changes"; exit 0; fi
+          if [ -z "$(git status --porcelain -- 'data*.json' league.json)" ]; then echo "No changes"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json league.json
+          git add data*.json league.json
           git commit -m "data: update from FBCV"
           git push

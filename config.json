@@ -1,6 +1,16 @@
 {
   "teamId": 12981,
   "teamName": "CD Don Bosco B",
+  "otherTeams": [
+    {
+      "id": 12980,
+      "name": "CD Don Bosco A"
+    },
+    {
+      "id": 11425,
+      "name": "CD Don Bosco C"
+    }
+  ],
   "clubName": "CD Don Bosco Valencia",
   "season": 2026,
   "nameStyle": "initial",
