@@ -96,13 +96,6 @@
    "name": "Y. R.",
    "no": null,
    "registered": true
-  },
-  {
-   "id": "1fwsuxw",
-   "name": "Yehor",
-   "no": null,
-   "registered": false,
-   "pending": true
   }
  ],
  "groups": [
@@ -903,5 +896,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-09T17:28:04.720Z"
+ "updated": "2026-11-12T11:58:13.714Z"
 }
