@@ -153,6 +153,25 @@ tr.us td.team{color:var(--ball);font-weight:700}
 .arrow{align-self:center;color:var(--ball);font-family:var(--display);font-size:1.8rem;font-weight:800}
 @media (max-width:640px){.path{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center;line-height:1}}
 
+/* rank chips + scope switch */
+.ranks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.rk3{background:var(--panel);border-radius:14px;padding:10px 12px;min-width:0;cursor:pointer;border:0;font:inherit;color:inherit;text-align:left}
+.rk3 b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(1.6rem,7.5vw,2.2rem);line-height:1;white-space:nowrap}
+.rk3 b small{font-family:var(--body);font-size:.78rem;font-weight:600;color:var(--muted);margin-left:4px}
+.rk3 span{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.rk3.on{background:var(--ball);color:#160a02}.rk3.on b small,.rk3.on span{color:#160a02;opacity:.75}
+.rk3:focus-visible,.scope button:focus-visible,.more:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
+.scope{display:inline-flex;background:var(--panel);border-radius:99px;padding:3px;margin-bottom:12px}
+.scope button{font:inherit;font-size:.82rem;font-weight:700;color:var(--muted);background:none;border:0;border-radius:99px;padding:6px 14px;cursor:pointer}
+.scope button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.ot td.nm{white-space:normal;line-height:1.25}
+.ot small.tm{display:block;color:var(--muted);font-size:.76rem;margin-top:2px;font-weight:500}
+.ot tr.gap td{color:var(--muted);text-align:center;padding:4px;background:none!important}
+.ot tr.us td{background:var(--panel-hi)}
+.ot tr.us td.nm{color:var(--fg)}
+.grp{display:inline-block;min-width:1.5em;text-align:center;font-size:.7rem;font-weight:800;border-radius:6px;padding:0 4px;background:var(--panel-hi);color:var(--fg);margin-right:4px}
+.more{margin-top:10px;font:inherit;font-size:.82rem;font-weight:700;color:var(--fg);background:var(--panel);border:0;border-radius:99px;padding:7px 16px;cursor:pointer}
+
 footer{color:var(--muted);font-size:.8rem;display:flex;flex-wrap:wrap;gap:6px 16px}
 footer a{color:var(--fg)}
 a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
@@ -216,6 +235,11 @@ a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
   <section class="panel" id="p-team" role="tabpanel" aria-labelledby="t-team" hidden>
     <div>
       <h2 data-t="whoBest"></h2>
+      <div class="ranks" id="ranks"></div>
+      <div class="scope" role="group" aria-label="Scope">
+        <button data-s="team" aria-pressed="true" data-t="scTeam"></button><button data-s="group" aria-pressed="false" data-t="scGroup"></button><button data-s="league" aria-pressed="false" data-t="scLeague"></button>
+      </div>
+      <div id="scopeTeam">
       <div class="tbl"><table class="lb">
         <thead><tr>
           <th>#</th><th data-t="colNo"></th><th data-t="colPlayer"></th>
@@ -228,6 +252,15 @@ a:focus-visible{outline:2px solid var(--ball);outline-offset:2px}
         <tbody id="lb"></tbody>
       </table></div>
       <p class="hint" data-t="lbHint"></p>
+      </div>
+      <div id="scopeOther" hidden>
+        <div class="tbl"><table class="lb ot">
+          <thead><tr><th>#</th><th data-t="colPlayer"></th><th class="r" data-t="colG"></th><th class="r sep" data-t="colPts"></th><th class="r" data-t="colAvg"></th></tr></thead>
+          <tbody id="ot"></tbody>
+        </table></div>
+        <button class="more" id="otMore"></button>
+        <p class="hint" id="otHint"></p>
+      </div>
     </div>
   </section>
 
@@ -276,7 +309,7 @@ const T={
   rank:(a,n,b)=>`В команде: <b>${a}-е место</b> из ${n} по очкам · <b>${b}-е</b> по минутам на поле`,
   pending:"статистика скоро",noGames:"ещё не играл",dnp:"не играл",notYet:"В официальных матчах ещё не выходил — статистика появится после первой игры.",
   T:"Т",tour:"тур",home:"дома",away:"в гостях",vs:"против",W:"В",L:"П",ptsShort:"очк.",minShort:"мин",next:"Следующий матч",
-  whoBest:"Кто лучше",colNo:"№",colPlayer:"Игрок",col2:"2-очк",col3:"3-очк",colFt:"Штраф",colPts:"Очки",colMin:"Мин",
+  whoBest:"Кто лучше",scTeam:"Команда",scGroup:"Группа",scLeague:"Лига",colAvg:"Ср.",rkIn:"место",rkOf:n=>`из ${n}`,showAll:"Показать всех",showLess:"Свернуть",otGroupHint:(n,g)=>`Все игроки группы ${g} (${n}), по очкам. Ср. — очков за игру.`,otLeagueHint:n=>`Топ-20 из ${n} игроков всех групп нашего уровня, по очкам.`,colNo:"№",colPlayer:"Игрок",col2:"2-очк",col3:"3-очк",colFt:"Штраф",colPts:"Очки",colMin:"Мин",
   lbHint:"Нажми на заголовок колонки, чтобы отсортировать. У штрафных и трёхочковых серым — сколько было попыток. Итог за все сыгранные туры.",
   standings:"Таблица группы",colTeam:"Команда",colG:"И",colW:"В",colL:"П",lg1:"Выход в Cto 1ª Zonal",lg2:"Шанс как лучшая вторая",lg3:"Cto 2ª Zonal",
   path:"Путь в Preferente",s1w:"окт – дек 2026",s1h:"Эта группа",s1p:"Занять 1-е место или стать одной из лучших вторых команд.",
@@ -291,7 +324,7 @@ const T={
   rank:(a,n,b)=>`En el equipo: <b>${a}º</b> de ${n} en puntos · <b>${b}º</b> en minutos`,
   pending:"estadísticas en breve",noGames:"aún sin jugar",dnp:"no jugó",notYet:"Todavía no ha jugado partidos oficiales: sus datos aparecerán tras el primero.",
   T:"J",tour:"jornada",home:"en casa",away:"fuera",vs:"contra",W:"V",L:"D",ptsShort:"pts",minShort:"min",next:"Próximo partido",
-  whoBest:"Quién lidera",colNo:"Dorsal",colPlayer:"Jugador",col2:"T2",col3:"T3",colFt:"TL",colPts:"Pts",colMin:"Min",
+  whoBest:"Quién lidera",scTeam:"Equipo",scGroup:"Grupo",scLeague:"Liga",colAvg:"Med.",rkIn:"puesto",rkOf:n=>`de ${n}`,showAll:"Ver todos",showLess:"Ver menos",otGroupHint:(n,g)=>`Todos los jugadores del grupo ${g} (${n}), por puntos. Med. = puntos por partido.`,otLeagueHint:n=>`Top 20 de ${n} jugadores de todos los grupos de nuestro nivel, por puntos.`,colNo:"Dorsal",colPlayer:"Jugador",col2:"T2",col3:"T3",colFt:"TL",colPts:"Pts",colMin:"Min",
   lbHint:"Pulsa el título de una columna para ordenar. En gris, los intentos de tiros libres y triples. Totales de todas las jornadas jugadas.",
   standings:"Clasificación",colTeam:"Equipo",colG:"J",colW:"V",colL:"D",lg1:"Pasa al Cto 1ª Zonal",lg2:"Opción como mejor 2º",lg3:"Cto 2ª Zonal",
   path:"Camino a Preferente",s1w:"oct – dic 2026",s1h:"Este grupo",s1p:"Quedar 1º o ser uno de los mejores segundos.",
@@ -306,7 +339,7 @@ const T={
   rank:(a,n,b)=>`In the team: <b>#${a}</b> of ${n} in points · <b>#${b}</b> in minutes`,
   pending:"stats coming soon",noGames:"no games yet",dnp:"did not play",notYet:"No official games yet: stats will appear after the first one.",
   T:"R",tour:"round",home:"home",away:"away",vs:"vs",W:"W",L:"L",ptsShort:"pts",minShort:"min",next:"Next game",
-  whoBest:"Leaderboard",colNo:"No.",colPlayer:"Player",col2:"2PT",col3:"3PT",colFt:"FT",colPts:"Pts",colMin:"Min",
+  whoBest:"Leaderboard",scTeam:"Team",scGroup:"Group",scLeague:"League",colAvg:"Avg",rkIn:"rank",rkOf:n=>`of ${n}`,showAll:"Show all",showLess:"Show less",otGroupHint:(n,g)=>`All players of group ${g} (${n}), by points. Avg = points per game.`,otLeagueHint:n=>`Top 20 of ${n} players across all groups of our level, by points.`,colNo:"No.",colPlayer:"Player",col2:"2PT",col3:"3PT",colFt:"FT",colPts:"Pts",colMin:"Min",
   lbHint:"Tap a column header to sort. Grey numbers are free-throw and three-point attempts. Totals across all rounds played.",
   standings:"Standings",colTeam:"Team",colG:"GP",colW:"W",colL:"L",lg1:"Qualifies for Cto 1ª Zonal",lg2:"Chance as a best runner-up",lg3:"Cto 2ª Zonal",
   path:"Road to Preferente",s1w:"Oct – Dec 2026",s1h:"This group",s1p:"Finish 1st or be one of the best runners-up.",
@@ -428,7 +461,46 @@ function renderFooter(){
  const last=finished[finished.length-1];
  if(last)$("lnkLast").href=`https://www.fbcv.es/competiciones/partido?id=${last.id}`;else $("lnkLast").hidden=true;
 }
-function renderAll(){if(!D)return;renderHero();renderMe();renderLB();renderStand();renderFooter()}
+/* ===== RANKS: team / group / league (league.json) ===== */
+let LG=null, scope="team", otAll=false;
+function myRanks(){
+ const active=players.filter(p=>p.g);
+ const team=me&&me.g?{rk:1+active.filter(p=>p.pts>me.pts).length,n:active.length}:null;
+ const o=LG&&me&&me.g?LG.ours.find(x=>x.no===me.no):null;
+ return {team, group:o?{rk:o.grk,n:LG.groupTotal}:null, league:o?{rk:o.lrk,n:LG.leagueTotal}:null};
+}
+function renderRanks(){
+ if(!me)return;
+ const t=T[L], r=myRanks();
+ const chip=(k,lab)=>`<button class="rk3 ${scope===k?"on":""}" data-s="${k}"><span>${lab}</span><b class="num">${r[k]?r[k].rk:"–"}<small>${r[k]?t.rkOf(r[k].n):""}</small></b></button>`;
+ $("ranks").innerHTML=chip("team",t.scTeam)+(LG?chip("group",t.scGroup)+chip("league",t.scLeague):"");
+ document.querySelectorAll(".rk3").forEach(b=>b.onclick=()=>setScope(b.dataset.s));
+ document.querySelector(".scope").hidden=!LG;
+}
+function setScope(s){scope=s;otAll=false;document.querySelectorAll(".scope button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===s));$("scopeTeam").hidden=s!=="team";$("scopeOther").hidden=s==="team";renderRanks();renderOther()}
+document.querySelectorAll(".scope button").forEach(b=>b.onclick=()=>setScope(b.dataset.s));
+function renderOther(){
+ if(scope==="team"||!LG||!me)return;
+ const t=T[L], o=me.g?LG.ours.find(x=>x.no===me.no):null;
+ const row=(p,cls="")=>`<tr class="${cls}"><td class="rk num">${p.rk}</td><td class="nm">${esc(p.name)}<small class="tm">${p.group?`<span class="grp">${p.group}</span>`:""}${esc(p.team)}</small></td><td class="r">${p.g}</td><td class="r tot sep">${p.pts}</td><td class="r">${(p.pts/p.g).toFixed(1)}</td></tr>`;
+ let list, total, rows=[];
+ if(scope==="group"){
+  list=LG.group; total=LG.groupTotal;
+  const shown=otAll?list:list.filter((p,i)=>i<10||(o&&p.us&&p.no===me.no));
+  shown.forEach((p,i)=>{if(!otAll&&i===10)rows.push(`<tr class="gap"><td colspan="5">⋯</td></tr>`);rows.push(row({...p,name:p.us?(P[Object.keys(P).find(k=>P[k].no===p.no)]?.name||p.name):p.name},(p.us&&p.no===me.no?"me":p.us?"us":"")))});
+  $("otMore").hidden=false;$("otMore").textContent=otAll?t.showLess:t.showAll;$("otHint").textContent=t.otGroupHint(total,LG.groupName||"");
+ }else{
+  list=LG.top; total=LG.leagueTotal;
+  rows=list.map(p=>row(p));
+  if(o){rows.push(`<tr class="gap"><td colspan="5">⋯</td></tr>`);rows.push(row({rk:o.lrk,name:me.name,team:"Don Bosco B",group:LG.groupName||"",g:o.g,pts:o.pts},"me"))}
+  $("otMore").hidden=true;$("otHint").textContent=t.otLeagueHint(total);
+ }
+ $("ot").innerHTML=rows.join("");
+}
+$("otMore").onclick=()=>{otAll=!otAll;renderOther()};
+fetch("league.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{LG=j;renderRanks();renderOther()}).catch(()=>{});
+
+function renderAll(){if(!D)return;renderHero();renderMe();renderLB();renderStand();renderFooter();renderRanks();renderOther()}
 
 /* ===== PICKER ===== */
 const picker=$("picker");
@@ -439,7 +511,7 @@ function renderRoster(){
 function selectPlayer(id,save){
  me=P[id]||me;
  if(save)store.set("player",me.id);
- renderHero();renderMe();renderLB();
+ renderHero();renderMe();renderLB();renderRanks();renderOther();
 }
 function openPicker(){renderRoster();picker.hidden=false;(picker.querySelector('.pl[aria-current="true"]')||picker.querySelector(".pl"))?.focus()}
 function closePicker(){picker.hidden=true;$("swapBtn").focus()}

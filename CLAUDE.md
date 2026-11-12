@@ -16,8 +16,10 @@ Repo: `git@github.com:rbyakov/baloncesto-don-bosco.git` · Pages: `https://rbyak
   Player picker on first visit, choice saved in `localStorage.player`; language in `localStorage.lang` (only saved on explicit click; default = browser language, ca/va→es, else en). Deep links: `#p7` (player by shirt number), `#team`, `#group`.
 - `data.json` — built by the script; committed. Initial version hand-verified against live API (checksum-matched).
 - `scripts/build-data.mjs` — Node 20, no deps. Fetches roster, standings, calendar, box scores → `data.json`. Reuses already-published box scores from previous `data.json` (no refetch). Writes only if content changed.
-- `config.json` — `teamId` 12981, `nameStyle` (`initial` → "Makar B." default, public site with minors; `first`, `full`), `defaultPlayer` "Makar", `extraPlayers` ["Yehor"] (squad member not yet registered in FBCV; auto-hidden once a roster name starts with it).
-- `.github/workflows/update-data.yml` — cron: weekends every 30 min 06–20 UTC, weekdays 4×/day; commits `data.json` with GITHUB_TOKEN (`contents: write`).
+- `scripts/build-league.mjs` — Node 20, no deps. Player rankings by points: our group (all players) + whole level (all groups of the same category/phase, top 20) → `league.json`. Category/phase taken from getTeamCard (follows the team into phase 2). ~1 `team-stats` request per team (~46), so it self-throttles to once per 20 h (`FORCE=1` to override). Skips FBCV placeholders "Jugadores/as inscritos/as a mano"; keeps FBCV-hidden initials (G.O.S.M.) as is.
+- `league.json` — `{level, phase, groupName, leagueTotal, groupTotal, top[], group[], ours[{no, lrk, grk}]}`. Team tab shows 3 rank chips (team / group / league) and a Team / Group / League switch.
+- `config.json` — `teamId` 12981, `nameStyle` (`initial` → "Makar B." default, public site with minors; `first`, `full`), `defaultPlayer` "Makar", `extraPlayers` [] (squad members not yet registered in FBCV; Yehor got registered 2026-11-09 and shows as "Y. R." because FBCV hides his name — keep it that way).
+- `.github/workflows/update-data.yml` — cron: weekends every 30 min 06–20 UTC, weekdays 4×/day; commits `data.json` + `league.json` with GITHUB_TOKEN; league step is continue-on-error (`contents: write`).
 
 ## Data source: FBCV results platform (OW Basket / Optimal Way Consulting) — unofficial use
 Public key embedded in fbcv.es itself: `btz38ZsZlAdaODiH2fGsnJC9mZgSNPeR`.
@@ -28,7 +30,7 @@ Public key embedded in fbcv.es itself: `btz38ZsZlAdaODiH2fGsnJC9mZgSNPeR`.
 - `CategoryRegistered/getVisibleWeb/{season}/1/`, `Competition/getCompetitionGroupVisibleWeb/{catId}/1` → categories / groups (used for research, e.g. last season).
 `MS = https://msstats.optimalwayconsulting.com/v1/fbcv/` — **CORS restricted to fbcv.es** → only server-side (Action):
 - `getJsonWithMatchStats/{universallyid}?currentSeason=true` → `teams[]` (match by `teamIdExtern` == teamId) → `players[]`: name, dorsal, timePlayed, data.{score, shotsOfTwoSuccessful, shotsOfThreeSuccessful/Attempted, shotsOfOneSuccessful/Attempted (free throws), personal}. 2-pt attempts are not really recorded (only makes are reliable).
-- `team-stats/team/{teamId}/season/{season}` → season totals per player (not used yet).
+- `team-stats/team/{teamId}/season/{season}` → season totals per player (used by build-league). Only shots, fouls, minutes are recorded in this league: assists/rebounds/steals/turnovers are always 0.
 FBCV human pages: `fbcv.es/competiciones/equipo?id=12981`, `.../competicion?id=2826` (group), `.../partido?id={idMatch}`.
 BasketCV (basketcv.com) was the first source but went down / robots-blocked — don't depend on it.
 
