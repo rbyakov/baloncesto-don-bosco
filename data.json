@@ -109,23 +109,23 @@
      "pos": 1,
      "teamId": 10689,
      "team": "Picanya Bàsquet Futurpiso 13",
-     "g": 4,
-     "w": 3,
+     "g": 5,
+     "w": 4,
      "l": 1,
-     "pf": 243,
-     "pa": 198,
-     "pts": 7
+     "pf": 315,
+     "pa": 230,
+     "pts": 9
     },
     {
      "pos": 2,
      "teamId": 13015,
      "team": "Ferriemocion Claret Azul",
-     "g": 3,
-     "w": 3,
+     "g": 4,
+     "w": 4,
      "l": 0,
-     "pf": 213,
-     "pa": 136,
-     "pts": 6
+     "pf": 275,
+     "pa": 158,
+     "pts": 8
     },
     {
      "pos": 3,
@@ -142,23 +142,23 @@
      "pos": 4,
      "teamId": 13583,
      "team": "Arte Láctico CB Chiva",
-     "g": 3,
+     "g": 4,
      "w": 1,
-     "l": 2,
-     "pf": 118,
-     "pa": 173,
-     "pts": 4
+     "l": 3,
+     "pf": 140,
+     "pa": 235,
+     "pts": 5
     },
     {
      "pos": 5,
      "teamId": 12981,
      "team": "CD Don Bosco B",
-     "g": 4,
+     "g": 5,
      "w": 0,
-     "l": 4,
-     "pf": 142,
-     "pa": 245,
-     "pts": 4
+     "l": 5,
+     "pf": 174,
+     "pa": 317,
+     "pts": 5
     },
     {
      "pos": 6,
@@ -819,11 +819,132 @@
    "away": "CD Don Bosco B",
    "homeId": 10689,
    "awayId": 12981,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 72,
+   "awayScore": 32,
    "venue": "Pab Muni Picanya",
    "groupId": 2826,
-   "box": null
+   "box": [
+    {
+     "p": "zi8knw",
+     "no": 4,
+     "min": 22,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "5c1zlt",
+     "no": 7,
+     "min": 17,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "mcemes",
+     "no": 8,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 5
+    },
+    {
+     "p": "1767fla",
+     "no": 9,
+     "min": 24,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 4
+    },
+    {
+     "p": "n395zr",
+     "no": 10,
+     "min": 23,
+     "pts": 10,
+     "p2": 5,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "1jlbkes",
+     "no": 18,
+     "min": 18,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "18yxr8a",
+     "no": 19,
+     "min": 17,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "hvfh0m",
+     "no": 23,
+     "min": 18,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "fm3gwc",
+     "no": 25,
+     "min": 23,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "i5az7w",
+     "no": 77,
+     "min": 18,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    }
+   ]
   },
   {
    "id": 72635,
@@ -896,5 +1017,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-12T11:58:13.714Z"
+ "updated": "2026-11-14T13:24:28.823Z"
 }

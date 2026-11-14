@@ -103,67 +103,67 @@
      "pos": 1,
      "teamId": 10617,
      "team": "CB Grao",
-     "g": 4,
-     "w": 4,
+     "g": 5,
+     "w": 5,
      "l": 0,
-     "pf": 236,
-     "pa": 103,
-     "pts": 8
+     "pf": 292,
+     "pa": 136,
+     "pts": 10
     },
     {
      "pos": 2,
-     "teamId": 11425,
-     "team": "CD Don Bosco C",
-     "g": 4,
-     "w": 3,
+     "teamId": 10295,
+     "team": "CDE Calasanz Valencia Naranja",
+     "g": 5,
+     "w": 4,
      "l": 1,
-     "pf": 248,
-     "pa": 154,
-     "pts": 7
+     "pf": 289,
+     "pa": 228,
+     "pts": 9
     },
     {
      "pos": 3,
-     "teamId": 10295,
-     "team": "CDE Calasanz Valencia Naranja",
-     "g": 4,
+     "teamId": 11425,
+     "team": "CD Don Bosco C",
+     "g": 5,
      "w": 3,
-     "l": 1,
-     "pf": 225,
-     "pa": 192,
-     "pts": 7
+     "l": 2,
+     "pf": 281,
+     "pa": 210,
+     "pts": 8
     },
     {
      "pos": 4,
-     "teamId": 11546,
-     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
-     "g": 3,
+     "teamId": 10554,
+     "team": "Mislata BC Blanco",
+     "g": 4,
      "w": 1,
-     "l": 2,
-     "pf": 127,
-     "pa": 173,
-     "pts": 4
+     "l": 3,
+     "pf": 149,
+     "pa": 218,
+     "pts": 5
     },
     {
      "pos": 5,
-     "teamId": 11205,
-     "team": "C. B. Tabernes Blanques B",
+     "teamId": 11546,
+     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
      "g": 4,
-     "w": 0,
-     "l": 4,
-     "pf": 114,
-     "pa": 247,
-     "pts": 4
+     "w": 1,
+     "l": 3,
+     "pf": 163,
+     "pa": 237,
+     "pts": 5
     },
     {
      "pos": 6,
-     "teamId": 10554,
-     "team": "Mislata BC Blanco",
-     "g": 3,
+     "teamId": 11205,
+     "team": "C. B. Tabernes Blanques B",
+     "g": 5,
      "w": 0,
-     "l": 3,
-     "pf": 107,
-     "pa": 188,
-     "pts": 3
+     "l": 5,
+     "pf": 144,
+     "pa": 289,
+     "pts": 5
     }
    ]
   }
@@ -741,11 +741,132 @@
    "away": "CD Don Bosco C",
    "homeId": 10617,
    "awayId": 11425,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 56,
+   "awayScore": 33,
    "venue": "Pab Muni Malvarrosa",
    "groupId": 2841,
-   "box": null
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 29,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 20,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 22,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1h3yevf",
+     "no": 9,
+     "min": 19,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 1,
+     "pf": 3
+    },
+    {
+     "p": "gm16nm",
+     "no": 11,
+     "min": 25,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "1togqjr",
+     "no": 12,
+     "min": 13,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 15,
+     "pts": 2,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 2,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 28,
+     "pts": 11,
+     "p2": 5,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 3,
+     "pf": 4
+    },
+    {
+     "p": "1o8p4u0",
+     "no": 32,
+     "min": 18,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 2
+    },
+    {
+     "p": "1hmfj7h",
+     "no": 77,
+     "min": 11,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    }
+   ]
   },
   {
    "id": 73055,
@@ -818,5 +939,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-12T20:03:10.699Z"
+ "updated": "2026-11-14T13:24:42.127Z"
 }

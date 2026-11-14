@@ -95,69 +95,69 @@
    "standing": [
     {
      "pos": 1,
-     "teamId": 10128,
-     "team": "Piedras Maestrazgo Jovens L´eliana",
-     "g": 4,
-     "w": 3,
+     "teamId": 10789,
+     "team": "CB Moncada \"a\"",
+     "g": 5,
+     "w": 4,
      "l": 1,
-     "pf": 263,
-     "pa": 176,
-     "pts": 7
+     "pf": 312,
+     "pa": 254,
+     "pts": 9
     },
     {
      "pos": 2,
-     "teamId": 10789,
-     "team": "CB Moncada \"a\"",
+     "teamId": 11911,
+     "team": "EB Lliria Infantil Negre",
      "g": 4,
-     "w": 3,
-     "l": 1,
-     "pf": 246,
-     "pa": 226,
-     "pts": 7
+     "w": 4,
+     "l": 0,
+     "pf": 275,
+     "pa": 150,
+     "pts": 8
     },
     {
      "pos": 3,
-     "teamId": 11911,
-     "team": "EB Lliria Infantil Negre",
-     "g": 3,
+     "teamId": 10128,
+     "team": "Piedras Maestrazgo Jovens L´eliana",
+     "g": 5,
      "w": 3,
-     "l": 0,
-     "pf": 202,
-     "pa": 109,
-     "pts": 6
+     "l": 2,
+     "pf": 304,
+     "pa": 249,
+     "pts": 8
     },
     {
      "pos": 4,
      "teamId": 12980,
      "team": "CD Don Bosco A",
-     "g": 4,
-     "w": 1,
+     "g": 5,
+     "w": 2,
      "l": 3,
-     "pf": 227,
-     "pa": 259,
-     "pts": 5
+     "pf": 277,
+     "pa": 267,
+     "pts": 7
     },
     {
      "pos": 5,
      "teamId": 10645,
      "team": "N.b. Paterna A 2013",
-     "g": 4,
+     "g": 5,
      "w": 1,
-     "l": 3,
-     "pf": 154,
-     "pa": 255,
-     "pts": 5
+     "l": 4,
+     "pf": 182,
+     "pa": 321,
+     "pts": 6
     },
     {
      "pos": 6,
      "teamId": 10448,
      "team": "CD Escuelas Pías A",
-     "g": 3,
+     "g": 4,
      "w": 0,
-     "l": 3,
-     "pf": 92,
-     "pa": 159,
-     "pts": 3
+     "l": 4,
+     "pf": 100,
+     "pa": 209,
+     "pts": 4
     }
    ]
   }
@@ -807,11 +807,156 @@
    "away": "CD Don Bosco A",
    "homeId": 10448,
    "awayId": 12980,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 8,
+   "awayScore": 50,
    "venue": "Col Escuelas Pias",
    "groupId": 2819,
-   "box": null
+   "box": [
+    {
+     "p": "1spu8np",
+     "no": 1,
+     "min": 15,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 3
+    },
+    {
+     "p": "v9hgqc",
+     "no": 6,
+     "min": 20,
+     "pts": 7,
+     "p2": 2,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1lhcahq",
+     "no": 7,
+     "min": 18,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 2
+    },
+    {
+     "p": "6uba6t",
+     "no": 10,
+     "min": 17,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1tn8vw6",
+     "no": 11,
+     "min": 18,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 3
+    },
+    {
+     "p": "1nczzpq",
+     "no": 14,
+     "min": 17,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "1m5gujm",
+     "no": 21,
+     "min": 15,
+     "pts": 5,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 1,
+     "pf": 0
+    },
+    {
+     "p": "1h7jpvw",
+     "no": 22,
+     "min": 15,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "1el893f",
+     "no": 24,
+     "min": 18,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "q1tn57",
+     "no": 33,
+     "min": 20,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "xneoz6",
+     "no": 34,
+     "min": 15,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "wcfqza",
+     "no": 35,
+     "min": 12,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 2
+    }
+   ]
   },
   {
    "id": 73456,
@@ -884,5 +1029,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-12T20:03:03.487Z"
+ "updated": "2026-11-14T13:24:35.500Z"
 }
