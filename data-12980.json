@@ -47,7 +47,7 @@
    "id": "1tcznu4",
    "name": "Mateo G.",
    "no": 15,
-   "registered": true
+   "registered": false
   },
   {
    "id": "1m5gujm",
@@ -1029,5 +1029,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-14T13:24:35.500Z"
+ "updated": "2026-11-17T16:52:42.065Z"
 }
