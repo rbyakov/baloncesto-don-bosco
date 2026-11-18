@@ -90,6 +90,12 @@
    "name": "Adrian C.",
    "no": null,
    "registered": true
+  },
+  {
+   "id": "1tcznu4",
+   "name": "Mateo G.",
+   "no": null,
+   "registered": true
   }
  ],
  "groups": [
@@ -939,5 +945,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-14T13:24:42.127Z"
+ "updated": "2026-11-18T16:26:41.226Z"
 }

@@ -95,6 +95,17 @@
    "standing": [
     {
      "pos": 1,
+     "teamId": 11911,
+     "team": "EB Lliria Infantil Negre",
+     "g": 5,
+     "w": 5,
+     "l": 0,
+     "pf": 277,
+     "pa": 150,
+     "pts": 10
+    },
+    {
+     "pos": 2,
      "teamId": 10789,
      "team": "CB Moncada \"a\"",
      "g": 5,
@@ -103,17 +114,6 @@
      "pf": 312,
      "pa": 254,
      "pts": 9
-    },
-    {
-     "pos": 2,
-     "teamId": 11911,
-     "team": "EB Lliria Infantil Negre",
-     "g": 4,
-     "w": 4,
-     "l": 0,
-     "pf": 275,
-     "pa": 150,
-     "pts": 8
     },
     {
      "pos": 3,
@@ -152,11 +152,11 @@
      "pos": 6,
      "teamId": 10448,
      "team": "CD Escuelas Pías A",
-     "g": 4,
+     "g": 5,
      "w": 0,
      "l": 4,
      "pf": 100,
-     "pa": 209,
+     "pa": 211,
      "pts": 4
     }
    ]
@@ -1029,5 +1029,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-17T16:52:42.065Z"
+ "updated": "2026-11-18T16:26:36.756Z"
 }
