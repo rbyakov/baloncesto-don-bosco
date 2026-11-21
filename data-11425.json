@@ -109,12 +109,12 @@
      "pos": 1,
      "teamId": 10617,
      "team": "CB Grao",
-     "g": 5,
-     "w": 5,
+     "g": 6,
+     "w": 6,
      "l": 0,
-     "pf": 292,
-     "pa": 136,
-     "pts": 10
+     "pf": 351,
+     "pa": 155,
+     "pts": 12
     },
     {
      "pos": 2,
@@ -140,36 +140,36 @@
     },
     {
      "pos": 4,
-     "teamId": 11546,
-     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
-     "g": 4,
-     "w": 1,
+     "teamId": 10554,
+     "team": "Mislata BC Blanco",
+     "g": 5,
+     "w": 2,
      "l": 3,
-     "pf": 163,
-     "pa": 237,
-     "pts": 5
+     "pf": 194,
+     "pa": 260,
+     "pts": 7
     },
     {
      "pos": 5,
-     "teamId": 10554,
-     "team": "Mislata BC Blanco",
-     "g": 4,
+     "teamId": 11546,
+     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
+     "g": 5,
      "w": 1,
-     "l": 3,
-     "pf": 149,
-     "pa": 218,
-     "pts": 5
+     "l": 4,
+     "pf": 205,
+     "pa": 282,
+     "pts": 6
     },
     {
      "pos": 6,
      "teamId": 11205,
      "team": "C. B. Tabernes Blanques B",
-     "g": 5,
+     "g": 6,
      "w": 0,
-     "l": 5,
-     "pf": 144,
-     "pa": 289,
-     "pts": 5
+     "l": 6,
+     "pf": 163,
+     "pa": 348,
+     "pts": 6
     }
    ]
   }
@@ -945,5 +945,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-19T01:12:39.852Z"
+ "updated": "2026-11-21T14:33:16.812Z"
 }
