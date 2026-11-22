@@ -120,45 +120,45 @@
      "pos": 2,
      "teamId": 10295,
      "team": "CDE Calasanz Valencia Naranja",
-     "g": 5,
-     "w": 4,
+     "g": 6,
+     "w": 5,
      "l": 1,
-     "pf": 289,
-     "pa": 228,
-     "pts": 9
+     "pf": 347,
+     "pa": 266,
+     "pts": 11
     },
     {
      "pos": 3,
      "teamId": 11425,
      "team": "CD Don Bosco C",
-     "g": 5,
+     "g": 6,
      "w": 3,
-     "l": 2,
-     "pf": 281,
-     "pa": 210,
-     "pts": 8
+     "l": 3,
+     "pf": 319,
+     "pa": 268,
+     "pts": 9
     },
     {
      "pos": 4,
-     "teamId": 10554,
-     "team": "Mislata BC Blanco",
-     "g": 5,
+     "teamId": 11546,
+     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
+     "g": 6,
      "w": 2,
-     "l": 3,
-     "pf": 194,
-     "pa": 260,
-     "pts": 7
+     "l": 4,
+     "pf": 268,
+     "pa": 327,
+     "pts": 8
     },
     {
      "pos": 5,
-     "teamId": 11546,
-     "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
-     "g": 5,
-     "w": 1,
+     "teamId": 10554,
+     "team": "Mislata BC Blanco",
+     "g": 6,
+     "w": 2,
      "l": 4,
-     "pf": 205,
-     "pa": 282,
-     "pts": 6
+     "pf": 239,
+     "pa": 323,
+     "pts": 8
     },
     {
      "pos": 6,
@@ -882,11 +882,132 @@
    "away": "CDE Calasanz Valencia Naranja",
    "homeId": 11425,
    "awayId": 10295,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 38,
+   "awayScore": 58,
    "venue": "Pab Salesianos",
    "groupId": 2841,
-   "box": null
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 30,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 19,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 4,
+     "pf": 0
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 13,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1h3yevf",
+     "no": 9,
+     "min": 15,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 23,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1g3w4q3",
+     "no": 14,
+     "min": 24,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 27,
+     "pts": 15,
+     "p2": 7,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 6,
+     "pf": 0
+    },
+    {
+     "p": "1o8p4u0",
+     "no": 32,
+     "min": 16,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "1hmfj7h",
+     "no": 77,
+     "min": 11,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 1
+    },
+    {
+     "p": "6yxw09",
+     "no": 81,
+     "min": 22,
+     "pts": 1,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 0
+    }
+   ]
   },
   {
    "id": 73060,
@@ -945,5 +1066,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-21T14:33:16.812Z"
+ "updated": "2026-11-22T14:27:57.156Z"
 }

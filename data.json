@@ -113,6 +113,17 @@
    "standing": [
     {
      "pos": 1,
+     "teamId": 13015,
+     "team": "Ferriemocion Claret Azul",
+     "g": 6,
+     "w": 6,
+     "l": 0,
+     "pf": 445,
+     "pa": 276,
+     "pts": 12
+    },
+    {
+     "pos": 2,
      "teamId": 10689,
      "team": "Picanya Bàsquet Futurpiso 13",
      "g": 6,
@@ -121,17 +132,6 @@
      "pf": 378,
      "pa": 275,
      "pts": 11
-    },
-    {
-     "pos": 2,
-     "teamId": 13015,
-     "team": "Ferriemocion Claret Azul",
-     "g": 5,
-     "w": 5,
-     "l": 0,
-     "pf": 358,
-     "pa": 224,
-     "pts": 10
     },
     {
      "pos": 3,
@@ -146,6 +146,17 @@
     },
     {
      "pos": 4,
+     "teamId": 11581,
+     "team": "CB Aldaia B",
+     "g": 5,
+     "w": 1,
+     "l": 4,
+     "pf": 306,
+     "pa": 333,
+     "pts": 6
+    },
+    {
+     "pos": 5,
      "teamId": 13583,
      "team": "Arte Láctico CB Chiva",
      "g": 5,
@@ -156,7 +167,7 @@
      "pts": 6
     },
     {
-     "pos": 5,
+     "pos": 6,
      "teamId": 12981,
      "team": "CD Don Bosco B",
      "g": 6,
@@ -165,17 +176,6 @@
      "pf": 211,
      "pa": 388,
      "pts": 6
-    },
-    {
-     "pos": 6,
-     "teamId": 11581,
-     "team": "CB Aldaia B",
-     "g": 4,
-     "w": 1,
-     "l": 3,
-     "pf": 254,
-     "pa": 246,
-     "pts": 5
     }
    ]
   }
@@ -1168,5 +1168,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-21T14:33:06.816Z"
+ "updated": "2026-11-22T14:27:47.398Z"
 }
