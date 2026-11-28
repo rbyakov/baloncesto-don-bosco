@@ -109,67 +109,67 @@
      "pos": 1,
      "teamId": 10617,
      "team": "CB Grao",
-     "g": 6,
-     "w": 6,
+     "g": 7,
+     "w": 7,
      "l": 0,
-     "pf": 351,
-     "pa": 155,
-     "pts": 12
+     "pf": 404,
+     "pa": 168,
+     "pts": 14
     },
     {
      "pos": 2,
      "teamId": 10295,
      "team": "CDE Calasanz Valencia Naranja",
-     "g": 6,
-     "w": 5,
+     "g": 7,
+     "w": 6,
      "l": 1,
-     "pf": 347,
-     "pa": 266,
-     "pts": 11
+     "pf": 412,
+     "pa": 297,
+     "pts": 13
     },
     {
      "pos": 3,
      "teamId": 11425,
      "team": "CD Don Bosco C",
-     "g": 6,
-     "w": 3,
+     "g": 7,
+     "w": 4,
      "l": 3,
-     "pf": 319,
-     "pa": 268,
-     "pts": 9
+     "pf": 371,
+     "pa": 303,
+     "pts": 11
     },
     {
      "pos": 4,
      "teamId": 11546,
      "team": "Burger L'Horta-CD Berenguer Dalmau Groc",
-     "g": 6,
+     "g": 7,
      "w": 2,
-     "l": 4,
-     "pf": 268,
-     "pa": 327,
-     "pts": 8
+     "l": 5,
+     "pf": 281,
+     "pa": 380,
+     "pts": 9
     },
     {
      "pos": 5,
      "teamId": 10554,
      "team": "Mislata BC Blanco",
-     "g": 6,
+     "g": 7,
      "w": 2,
-     "l": 4,
-     "pf": 239,
-     "pa": 323,
-     "pts": 8
+     "l": 5,
+     "pf": 270,
+     "pa": 388,
+     "pts": 9
     },
     {
      "pos": 6,
      "teamId": 11205,
      "team": "C. B. Tabernes Blanques B",
-     "g": 6,
+     "g": 7,
      "w": 0,
-     "l": 6,
-     "pf": 163,
-     "pa": 348,
-     "pts": 6
+     "l": 7,
+     "pf": 198,
+     "pa": 400,
+     "pts": 7
     }
    ]
   }
@@ -1017,11 +1017,144 @@
    "away": "CD Don Bosco C",
    "homeId": 11205,
    "awayId": 11425,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 35,
+   "awayScore": 52,
    "venue": "Pab Muni Tabernes Blanques",
    "groupId": 2841,
-   "box": null
+   "box": [
+    {
+     "p": "1jyanul",
+     "no": 3,
+     "min": 25,
+     "pts": 7,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 3,
+     "fta": 7,
+     "pf": 1
+    },
+    {
+     "p": "16r62zb",
+     "no": 4,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1ivy5ux",
+     "no": 7,
+     "min": 17,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 1
+    },
+    {
+     "p": "gm16nm",
+     "no": 11,
+     "min": 25,
+     "pts": 6,
+     "p2": 3,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "1togqjr",
+     "no": 12,
+     "min": 10,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 2
+    },
+    {
+     "p": "wvg3y8",
+     "no": 13,
+     "min": 20,
+     "pts": 3,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 4,
+     "pf": 2
+    },
+    {
+     "p": "1g3w4q3",
+     "no": 14,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "anazmb",
+     "no": 23,
+     "min": 30,
+     "pts": 23,
+     "p2": 9,
+     "p3": 1,
+     "p3a": 1,
+     "ft": 2,
+     "fta": 6,
+     "pf": 1
+    },
+    {
+     "p": "1c0u47g",
+     "no": 29,
+     "min": 15,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 0,
+     "pf": 0
+    },
+    {
+     "p": "1o8p4u0",
+     "no": 32,
+     "min": 10,
+     "pts": 4,
+     "p2": 2,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 0,
+     "fta": 2,
+     "pf": 0
+    },
+    {
+     "p": "6yxw09",
+     "no": 81,
+     "min": 18,
+     "pts": 1,
+     "p2": 0,
+     "p3": 0,
+     "p3a": 0,
+     "ft": 1,
+     "fta": 2,
+     "pf": 0
+    }
+   ]
   },
   {
    "id": 73062,
@@ -1066,5 +1199,5 @@
    "box": null
   }
  ],
- "updated": "2026-11-22T14:27:57.156Z"
+ "updated": "2026-11-28T15:24:33.654Z"
 }
